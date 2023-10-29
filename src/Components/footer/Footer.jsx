@@ -6,7 +6,7 @@ import "../footer/styleFooter.css"
 const Footer = () => {
     return (
     <>
-        <div className="container-fluid bg-black py-1 divFooterMg">
+        <div className="container-fluid bg-black py-1 mg divFooterMg">
             <footer className="py-2 my-1 footerMG container ">
                 <div className="row justify-content-between  border-bottom">
                     <img className="col-md-4 col-lg-2 col img-fluid logoFooterMG pb-2 px-5 px-md-0" src="src/assets/logoPagina3.png" alt="logo de pagina" />
@@ -16,6 +16,7 @@ const Footer = () => {
                         <li className=" py-2 col-md-4 text-center"><a href="#" className=" nav-link text-white mx-2">Nosotros</a></li>
                     </ul>
                 </div>
+
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
                     <p className=" my-2 mb-md-0 text-white">© 2023 GymRoll</p>
                     <ul className="my-2 col-md-4 justify-content-end list-unstyled d-flex">
