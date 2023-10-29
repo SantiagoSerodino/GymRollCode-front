@@ -29,5 +29,5 @@
     background-color: var(--color-3-más-oscuro);
 }
 .divFooterMg  {
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
