@@ -46,7 +46,6 @@ const Clima = () => {
             <p>El cielo esta: {climaData.status}</p>
             <p>Humedad: {climaData.humedad}%</p>
             <img className='iconMG w-25' src={iconoClima(climaData.icon)} alt="icono del clima" />
-            <p>{climaData.icon}</p>
             </div>
         </div>
         </>
