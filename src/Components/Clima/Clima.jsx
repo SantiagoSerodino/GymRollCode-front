@@ -35,6 +35,7 @@ const Clima = () => {
     useEffect(() => {
     getClima();
     }, []);
+    
 
 
     return (
