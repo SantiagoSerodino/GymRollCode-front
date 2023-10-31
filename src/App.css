@@ -1,6 +1,32 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+  --color-1: #FFFFFF;
+  --color-2: #010101;
+  --color-3: #343232;
+  --color-4: #5D5D5E;
+  --color-5: #01F8B4;
+
+  --color-1: #FFFFFF;
+  --color-1-más-oscuro: #F0F0F0;
+  --color-1-más-claro: #FFFAFA;
+
+  --color-2: #010101;
+  --color-2-más-oscuro: #000000;
+  --color-2-más-claro: #020202;
+
+  --color-3: #343232;
+  --color-3-más-oscuro: #2A2929;
+  --color-3-más-claro: #3A3939;
+
+  --color-4: #5D5D5E;
+  --color-4-más-oscuro: #535252;
+  --color-4-más-claro: #626262;
+
+  --color-5: #01F8B4;
+  --color-5-más-oscuro: #00F0A0;
+  --color-5-más-claro: #02F8C4;
 }
+

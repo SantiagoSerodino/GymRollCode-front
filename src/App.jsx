@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import HomeScreen from './pages/HomeScreen';
 
 function App() {
 
   return (
+    
     <BrowserRouter>
      <Routes>
-      <Route/>
+      <Route path='/' element={<HomeScreen/>}/>
      </Routes>
     </BrowserRouter>
   )
