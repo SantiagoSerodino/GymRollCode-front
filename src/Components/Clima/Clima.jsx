@@ -39,15 +39,19 @@ const Clima = () => {
 
     return (
         <>
-        <div className='card'>
-            <div className='card-container'>
-            <h2>El tiempor en: {climaData.city} </h2>
-            <p> La temperatura actual es de: {climaData.temperature}°C</p>
-            <p>El cielo esta: {climaData.status}</p>
-            <p>Humedad: {climaData.humedad}%</p>
-            <img className='iconMG w-25' src={iconoClima(climaData.icon)} alt="icono del clima" />
+        <div className='card cardMG bg-dark-subtle py-1'  >
+            <img className='icon' src={iconoClima(climaData.icon)} alt='icono del clima' />  
+            <div className='card-body '>
+                <h5 className='cityNameMG text-uppercase'> {climaData.city} </h5>
             </div>
+            <ul className='list-group list-group-flush '>
+                <li className='list-group-item bg-dark   text-white-50 text-uppercase'>Temperatura: {climaData.temperature}°C</li>
+                <li className='list-group-item bg-dark   text-white-50 text-uppercase'>Humedad: {climaData.humedad}%</li>
+                <li className='list-group-item bg-dark   text-white-50 text-uppercase'>Estado de clima: {climaData.status}</li>
+            </ul>
         </div>
+
+
         </>
 
     )
