@@ -12,6 +12,32 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --color-1: #FFFFFF;
+  --color-2: #010101;
+  --color-3: #343232;
+  --color-4: #5D5D5E;
+  --color-5: #01F8B4;
+
+  --color-1: #FFFFFF;
+  --color-1-mas-oscuro: #F0F0F0;
+  --color-1-mas-claro: #FFFAFA;
+
+  --color-2: #010101;
+  --color-2-mas-oscuro: #000000;
+  --color-2-mas-claro: #020202;
+
+  --color-3: #343232;
+  --color-3-mas-oscuro: #2A2929;
+  --color-3-mas-claro: #3A3939;
+
+  --color-4: #5D5D5E;
+  --color-4-mas-oscuro: #535252;
+  --color-4-mas-claro: #626262;
+
+  --color-5: #01F8B4;
+  --color-5-mas-oscuro: #00F0A0;
+  --color-5-mas-claro: #02F8C4;
 }
 
 body {

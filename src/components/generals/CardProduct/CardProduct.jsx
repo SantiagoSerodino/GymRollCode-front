@@ -1,12 +1,15 @@
 import React from 'react';
+import './CardProduct.css';
 
-const CardProduct = (props) => {
+const CardProduct = ({ image, title, description }) => {
   return (
-    <div className="card" style={{width: '18rem'}}>
-      <img src="" alt="" />
+    <div className="card card-product">
+      <div className="card-img pt-2 pb-2">
+        <img src={image} alt="" />
+      </div>
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text"></p>
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text">{description}</p>
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+.card-product{
+  min-height: 100%;
+  background-color: var(--color-5-mas-claro) !important
+}
+
+.card-product .card-img{
+  text-align: center;
+  background: white;
+}
+
+.card-product .card-img img{
+  max-height: 150px;
+}
