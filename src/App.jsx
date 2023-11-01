@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import HomeScreen from './pages/HomeScreen';
+import ErrorScreen from './pages/ErrorScreen/ErrorScreen';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <BrowserRouter>
      <Routes>
       <Route path='/' element={<HomeScreen/>}/>
+      <Route path='/error' element={<ErrorScreen/>} />
      </Routes>
     </BrowserRouter>
   )
