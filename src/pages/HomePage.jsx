@@ -1,28 +1,36 @@
 import React from 'react';
 import CardProduct from '../components/generals/CardProduct/CardProduct';
+import Clima from '../Components/Clima/Clima'
 
 const HomePage = () => {
   return (
     <>
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-5 col-lg-4 mb-4">
-            <CardProduct image='/images/botella-termica.jpg' title="Botella" description=""/>
+        <div className="row">
+          <div className="col-12 col-md-9">
+            <div className="row justify-content-center">
+            <div className="col-12 col-md-5 col-lg-4 mb-4">
+              <CardProduct image='/images/botella-termica.jpg' title="Botella" description=""/>
+            </div>
+            <div className="col-12 col-md-5 col-lg-4 mb-4">
+              <CardProduct image='/images/remera-mujer.jpg' title="Remera-mujer" />
+            </div>
+            <div className="col-12 col-md-5 col-lg-4 mb-4">
+              <CardProduct image='/images/remera-hombre.webp' title="Remera-hombre" />
+            </div>
+            <div className="col-12 col-md-5 col-lg-4 mb-4">
+              <CardProduct image='/images/proteina-hombre.webp' title="Proteina-hombre" />
+            </div>
+            <div className="col-12 col-md-5 col-lg-4 mb-4">
+              <CardProduct image='/images/proteina-mujer.jpg' title="Proteina-mujer" />
+            </div>
+            <div className="col-12 col-md-5 col-lg-4 mb-4">
+              <CardProduct image='/images/combo.webp' title="Combo" />
+            </div>
           </div>
-          <div className="col-12 col-md-5 col-lg-4 mb-4">
-            <CardProduct image='/images/remera-mujer.jpg' title="Remera-mujer" />
           </div>
-          <div className="col-12 col-md-5 col-lg-4 mb-4">
-            <CardProduct image='/images/remera-hombre.webp' title="Remera-hombre" />
-          </div>
-          <div className="col-12 col-md-5 col-lg-4 mb-4">
-            <CardProduct image='/images/proteina-hombre.webp' title="Proteina-hombre" />
-          </div>
-          <div className="col-12 col-md-5 col-lg-4 mb-4">
-            <CardProduct image='/images/proteina-mujer.jpg' title="Proteina-mujer" />
-          </div>
-          <div className="col-12 col-md-5 col-lg-4 mb-4">
-            <CardProduct image='/images/combo.webp' title="Combo" />
+          <div className="col-12 col-md-3">
+            <Clima/>
           </div>
         </div>
       
