@@ -26,7 +26,12 @@
     --color-5-más-claro: #02F8C4;
 }
 
-.logoLogin {
+.colorForm {
+    background-color: #000000;
+    border-radius: 5%;
+}
+
+.logoSize {
     width: 50%;
 }
   
