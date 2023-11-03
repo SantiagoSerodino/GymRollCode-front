@@ -4,6 +4,7 @@ import axios from 'axios';
 import SubmitButton from '../../generals/SubmitButton/SubmitButton';
 import InputForm from '../../generals/InputForm/InputForm';
 
+
 const RegisterForm = () => {
   const [registerForm, setRegisterForm] = useState({
     name: '',
