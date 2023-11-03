@@ -23,8 +23,34 @@ const RegisterForm = () => {
      
   };
 
-  const handleSubmit = () => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const nameRegex = /^[A-Za-z]{3,12}$/;
+    const lastNameRegex = /^[A-Za-z]{3,12}$/;
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    const passwordRegex = /^.{8,}$/;
+
+    if (!nameRegex.test(registerForm.name)) {
+      alert('El campo debe tener entre 3 y 12 carecteres');
+      return;
+    }
+
+    if (!lastNameRegex.test(registerForm.lastName)) {
+      alert('El campo debe tener entre 3 y 12 carecteres');
+      return;
+    }
+
+    if (!emailRegex.test(registerForm.email)) {
+      alert('El correo electronico no es valido');
+      return;
+    }
+
+    if (!passwordRegex.test(registerForm.password)) {
+      alert('La contraseña debe tener al menos 8 caracteres');
+      return;
+    }
+
+
     axios.post('/register', registerForm)
     .then((response) => console.log(response))
     .catch((error) => console.log(error))
