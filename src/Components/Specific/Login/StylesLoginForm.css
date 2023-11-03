@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
 :root{
     --color-1: #FFFFFF;
     --color-2: #010101;
@@ -31,13 +25,6 @@
     --color-5-más-oscuro: #00F0A0;
     --color-5-más-claro: #02F8C4;
 }
-
-/* .colorFondo {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: black;
-} */
 
 .logoLogin {
     width: 50%;
