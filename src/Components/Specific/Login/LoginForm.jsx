@@ -8,6 +8,31 @@ import { Link } from 'react-router-dom';
 
 
 const LoginForm = () => {
+
+  const [loginForm, setLoginForm] = useState({
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+
+    setLoginForm((prevState) =>({
+      ...prevState,
+      [name] : value
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios.post('', loginForm)
+    .then((response) => {
+      if (response.status !== 201) throw new Error("Hubo un error")
+    })
+    .catch((error) => console.log(error))
+    .finally(() => alert('Inicio sesión con exito!'))
+  };
   
   return (
 
@@ -17,12 +42,12 @@ const LoginForm = () => {
 
           <h1 class="text-light fw-bold mb-4">Bienvenido!</h1>
 
-            <form className='form col-4 colorForm' >
+            <form className='form col-12 col-sm-6 col-lg-4 colorForm' onSubmit={handleSubmit} >
 
               <img className='logoSize mt-3 mb-3' src='src/assets/logoPagina3.png' alt='logo' />
               
-              <LoginInputForm label='Email' name={'email'} type='email'handleChange={(event) => handleChange(event)} />
-              <LoginInputForm label='Password' name={'password'} type='password'handleChange={(event) => handleChange(event)} />
+              <LoginInputForm label='Email' name='email' type='email'handleChange={(event) => handleChange(event)} />
+              <LoginInputForm label='Contraseña' name='password' type='password'handleChange={(event) => handleChange(event)} />
               <SubmitButton Text='Inicia Sesion'/>
             </form>
 
