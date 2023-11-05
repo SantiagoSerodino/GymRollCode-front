@@ -39,21 +39,15 @@ const About = () => {
 
     {/* <!-- Lista de miembros del equipo --> */}
     <div className="container equipoContainerMG pb-5">
-        <div className="row">
+        <div className="row justify-content-evenly">
             <article className="col-md-4 articleMG">
                 <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='imgPersonajeMG w-100 justify-content-center'>
-                    <p className=' fs-4 textMienbroMG '>Descripción de Miembro 6.</p>
+                <div className='pb-5 imgPersonajeMG w-100 align-content-center'>
+                    <h1 className=' textMienbroMG '>Mauro Gutierrez</h1>
+                    {/* <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
                     <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
                     <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
-                </div>
-            </article>
-            <article className="col-md-4 articleMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='imgPersonajeMG  w-100'>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p> */}
                 </div>
             </article>
             <article className="col-md-4 articleMG">
