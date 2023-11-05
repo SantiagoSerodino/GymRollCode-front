@@ -1,0 +1,75 @@
+:root{
+    --color-1: #FFFFFF;
+    --color-2: #010101;
+    --color-3: #343232;
+    --color-4: #5D5D5E;
+    --color-5: #01F8B4;
+
+    --color-1: #FFFFFF;
+    --color-1-más-oscuro: #F0F0F0;
+    --color-1-más-claro: #FFFAFA;
+
+    --color-2: #010101;
+    --color-2-más-oscuro: #000000;
+    --color-2-más-claro: #020202;
+
+    --color-3: #343232;
+    --color-3-más-oscuro: #2A2929;
+    --color-3-más-claro: #3A3939;
+
+    --color-4: #5D5D5E;
+    --color-4-más-oscuro: #535252;
+    --color-4-más-claro: #626262;
+
+    --color-5: #01F8B4;
+    --color-5-más-oscuro: #00F0A0;
+    --color-5-más-claro: #02F8C4;
+}
+/* logo */
+.contenedorLogoMG{
+    width: 25%;
+    max-width: 500px;
+    min-width: 150px;
+    margin: auto;
+}
+.logoAboutMG {
+    width: 100%;
+}
+
+.empresaMG{
+    display: grid;
+    place-items: center;
+}
+.imgEmpresaMG{
+    border-radius: 3%;
+}
+
+/* mosion y vision  */
+.misionMG{
+    color: var(--color-5);
+}
+.visionMG{
+    color: var(--color-5);
+}
+
+/* mienbros del equipo */
+.miembro-equipo img {
+    max-width: 100%;
+    transition: transform 0.3s;
+}
+
+.miembro-equipo:hover img {
+    transform: scale(1.15);
+}
+
+.miembro-equipo p {
+    display: none;
+}
+
+.miembro-equipo:hover p {
+    display: block;
+}
+.equipoContainerMG{
+    background-color: black;
+    width: 100vh;
+}

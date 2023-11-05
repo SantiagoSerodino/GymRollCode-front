@@ -1,55 +1,62 @@
 import React from 'react'
+import '../About/StyleAbout.css'
 
 const About = () => {
 
     return (
     <>
+    <div className=' container-fluid bg-black'>
+
     {/* <!-- Parte superior con la imagen del grupo y la descripción --> */}
-    <div className="container grupo-container">
-        <div className="row">
+    <div className="container logoContainerMG">
+        {/* logo de empresa */}
+        <div className='contenedorLogoMG'>
+            <img src="../src/assets/logoPagina2.png" alt="Imagen del grupo" className="img-fluid logoAboutMG pt-3 pb-5"/>
+        </div>
+        {/* descripción de quienes somos */}
+        <div className="row empresaMG pb-3">
             <div className="col-md-6">
-                <img src="imagen_grupo.jpg" alt="Imagen del grupo" className="img-fluid"/>
+                <img src="../src/assets/about-img/grupo.jpg" alt="Imagen del grupo" className="img-fluid imgEmpresaMG"/>
             </div>
-            <div className="col-md-6">
-                <p>Descripción de lo que ofrecemos.</p>
+            <div className="col-md-6 fs-5 py-3 text-white-50 ">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellendus ab, exercitationem alias harum dolore amet asperiores, pariatur illum minima eaque porro. Numquam totam error voluptatem quo sit ea inventore.</p>
             </div>
         </div>
     </div>
-
     {/* <!-- Mision y Vision --> */}
-    <div className="container mision-vision-container">
+    <div className="container misionVisionMG">
         <div className="row">
-            <div className="col-md-6 mision-container">
-                <h2>Misión</h2>
-                <p>Tu misión aquí.</p>
+            <div className="col-md-6 text-white-50 ">
+                <h2 className='misionMG'>Misión</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A repellat vero minus reprehenderit, nulla nisi mollitia distinctio, accusantium consequatur provident blanditiis ipsa labore temporibus ducimus, voluptates quibusdam cum laborum eligendi?</p>
             </div>
-            <div className="col-md-6 vision-container">
-                <h2>Visión</h2>
-                <p>Tu visión aquí.</p>
+            <div className="col-md-6 text-white-50 ">
+                <h2 className='visionMG'>Visión</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quisquam assumenda dolorem adipisci accusamus ratione ad asperiores nihil necessitatibus impedit? Vero sequi quod corporis iure saepe eligendi laboriosam reiciendis. Fugit?</p>
             </div>
         </div>
     </div>
 
     {/* <!-- Lista de miembros del equipo --> */}
-    <div className="container equipo-container">
+    <div className="container equipoContainerMG">
         <div className="row">
-            <div className="col-md-4 miembro-equipo">
+            <div className="col-md-4 miembroEquipoMG">
                 <img src="image1.jpg" alt="Miembro 1"/>
                 <p>Descripción de Miembro 1.</p>
             </div>
-            <div className="col-md-4 miembro-equipo">
+            <div className="col-md-4 miembroEquipoMG">
                 <img src="image2.jpg" alt="Miembro 2"/>
                 <p>Descripción de Miembro 2.</p>
             </div>
-            <div className="col-md-4 miembro-equipo">
+            <div className="col-md-4 miembroEquipoMG">
                 <img src="image3.jpg" alt="Miembro 3"/>
                 <p>Descripción de Miembro 3.</p>
             </div>
-            <div className="col-md-4 miembro-equipo">
+            <div className="col-md-4 miembroEquipoMG">
                 <img src="image4.jpg" alt="Miembro 4"/>
                 <p>Descripción de Miembro 4.</p>
             </div>
-            <div className="col-md-4 miembro-equipo">
+            <div className="col-md-4 miembroEquipoMG">
                 <img src="image5.jpg" alt="Miembro 5"/>
                 <p>Descripción de Miembro 5.</p>
             </div>
@@ -58,6 +65,8 @@ const About = () => {
                 <p>Descripción de Miembro 6.</p>
             </div>
         </div>
+    </div>
+
     </div>
     </>
     )

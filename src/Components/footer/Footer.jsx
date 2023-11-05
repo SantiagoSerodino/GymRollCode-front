@@ -6,10 +6,10 @@ import '../footer/styleFooter.css'
 const Footer = () => {
     return (
     <>
-        <div className='container-fluid bg-black mg divFooterMg'>
-            <footer className='py-2 my-0 footerMG container '>
-                <div className='row justify-content-between  border-bottom'>
-                    <img className='col-md-4 col-lg-2 col img-fluid logoFooterMG pb-2 px-5 px-md-0' src='src/assets/logoPagina3.png' alt='logo de pagina' />
+        
+            <footer className='my-0 footerMG container-fluid my-2 '>
+                <div className='row justify-content-between  border-bottom '>
+                    <img className='col-md-4 col-lg-2 col img-fluid logoFooterMG pb-2 px-5 px-md-0 ' src='src/assets/logoPagina3.png' alt='logo de pagina' />
                     <ul className='col-md-6 col-lg-6 col-xl-4 row  align-content-center justify-content-end ' >
                         <li className=' py-2 col-md-4 text-center'><a href='#' className=' nav-link text-white mx-2'>Home</a></li>
                         <li className=' py-2 col-md-4 text-center'><a href='#' className=' nav-link text-white mx-2'>Planes-Fit</a></li>
@@ -26,8 +26,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </footer>
-        </div>
-
+    
         
     </>
     )

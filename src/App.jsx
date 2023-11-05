@@ -11,14 +11,14 @@ function App() {
   return (
     <>
       <BrowserRouter> 
-      <Navbar/>
+      {/* <Navbar/> */}
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path='/register' element={<Register/>} />
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       </BrowserRouter>
     </>
   )
