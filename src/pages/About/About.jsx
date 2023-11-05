@@ -11,15 +11,15 @@ const About = () => {
     <div className="container logoContainerMG">
         {/* logo de empresa */}
         <div className='contenedorLogoMG'>
-            <img src="../src/assets/logoPagina2.png" alt="Imagen del grupo" className="img-fluid logoAboutMG pt-3 pb-5"/>
+            <img src="../src/assets/logoPagina4.png" alt="Imagen del grupo" className="img-fluid logoAboutMG pt-3 pb-5"/>
         </div>
         {/* descripción de quienes somos */}
         <div className="row empresaMG pb-3">
             <div className="col-md-6">
-                <img src="../src/assets/about-img/grupo.jpg" alt="Imagen del grupo" className="img-fluid imgEmpresaMG"/>
+                <img src="../src/assets/about-img/grupo.png" alt="Imagen del grupo" className="img-fluid imgEmpresaMG"/>
             </div>
             <div className="col-md-6 fs-5 py-3 text-white-50 ">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellendus ab, exercitationem alias harum dolore amet asperiores, pariatur illum minima eaque porro. Numquam totam error voluptatem quo sit ea inventore.</p>
+                <p>En GymRoll, creemos que la actividad física es la clave para una vida saludable y feliz. Por eso, ofrecemos a nuestros clientes una experiencia de entrenamiento única, con tecnología de punta, instructores profesionales y una amplia variedad de clases personalizadas.</p>
             </div>
         </div>
     </div>
@@ -28,11 +28,11 @@ const About = () => {
         <div className="row">
             <div className="col-md-6 text-white-50 ">
                 <h2 className='misionMG'>Misión</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A repellat vero minus reprehenderit, nulla nisi mollitia distinctio, accusantium consequatur provident blanditiis ipsa labore temporibus ducimus, voluptates quibusdam cum laborum eligendi?</p>
+                <p>Nuestra misión es ayudar a nuestros clientes a alcanzar sus metas de fitness, brindándoles un servicio de excelencia y una experiencia de entrenamiento personalizada.</p>
             </div>
             <div className="col-md-6 text-white-50 ">
                 <h2 className='visionMG'>Visión</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quisquam assumenda dolorem adipisci accusamus ratione ad asperiores nihil necessitatibus impedit? Vero sequi quod corporis iure saepe eligendi laboriosam reiciendis. Fugit?</p>
+                <p>Ser el gimnasio líder en la región, ofreciendo a nuestros clientes la mejor experiencia de entrenamiento posible.</p>
             </div>
         </div>
     </div>
@@ -42,36 +42,32 @@ const About = () => {
         <div className="row justify-content-evenly">
             <article className="col-md-4 articleMG">
                 <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='pb-5 imgPersonajeMG w-100 align-content-center'>
-                    <h1 className=' textMienbroMG '>Mauro Gutierrez</h1>
-                    {/* <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p> */}
+                <div className='imgPersonajeMG px-3 pb-5 w-100 '>
+                    <h2 className=' textMienbroMG '>Natalia Aguirre</h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
                 <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='imgPersonajeMG  w-100'>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                <div className='imgPersonajeMG px-3 pb-5  w-100'>
+                    <h2 className=' textMienbroMG '>Mauro Gutierrez </h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
                 <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='imgPersonajeMG  w-100'>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                <div className='imgPersonajeMG px-3 pb-5 w-100'>
+                    <h2 className=' textMienbroMG '>Franco Margagliotti</h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
                 <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='imgPersonajeMG  w-100'>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                <div className='imgPersonajeMG px-3 pb-5 w-100'>
+                    <h2 className=' textMienbroMG '>Santiago Serodino.</h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
                 <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
-                <div className='imgPersonajeMG  w-100'>
-                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                <div className='imgPersonajeMG px-3 pb-5 w-100'>
+                    <h2 className=' textMienbroMG '>Leandro Cudmani</h2>
                 </div>
             </article>
         </div>
