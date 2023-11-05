@@ -41,27 +41,27 @@ const About = () => {
     <div className="container equipoContainerMG">
         <div className="row">
             <div className="col-md-4 miembroEquipoMG">
-                <img src="image1.jpg" alt="Miembro 1"/>
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 1" className='p-3'/>
                 <p>Descripción de Miembro 1.</p>
             </div>
-            <div className="col-md-4 miembroEquipoMG">
-                <img src="image2.jpg" alt="Miembro 2"/>
+            <div className=" col-md-4 miembroEquipoMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 2" className='p-3'/>
                 <p>Descripción de Miembro 2.</p>
             </div>
             <div className="col-md-4 miembroEquipoMG">
-                <img src="image3.jpg" alt="Miembro 3"/>
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 3" className='p-3'/>
                 <p>Descripción de Miembro 3.</p>
             </div>
             <div className="col-md-4 miembroEquipoMG">
-                <img src="image4.jpg" alt="Miembro 4"/>
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 4" className='p-3'/>
                 <p>Descripción de Miembro 4.</p>
             </div>
             <div className="col-md-4 miembroEquipoMG">
-                <img src="image5.jpg" alt="Miembro 5"/>
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 5" className='p-3'/>
                 <p>Descripción de Miembro 5.</p>
             </div>
-            <div className="col-md-4 miembro-equipo">
-                <img src="image6.jpg" alt="Miembro 6"/>
+            <div className="col-md-4 miembroEquipoMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3'/>
                 <p>Descripción de Miembro 6.</p>
             </div>
         </div>
