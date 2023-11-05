@@ -38,32 +38,48 @@ const About = () => {
     </div>
 
     {/* <!-- Lista de miembros del equipo --> */}
-    <div className="container equipoContainerMG">
+    <div className="container equipoContainerMG pb-5">
         <div className="row">
-            <div className="col-md-4 miembroEquipoMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 1" className='p-3'/>
-                <p>Descripción de Miembro 1.</p>
-            </div>
-            <div className=" col-md-4 miembroEquipoMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 2" className='p-3'/>
-                <p>Descripción de Miembro 2.</p>
-            </div>
-            <div className="col-md-4 miembroEquipoMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 3" className='p-3'/>
-                <p>Descripción de Miembro 3.</p>
-            </div>
-            <div className="col-md-4 miembroEquipoMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 4" className='p-3'/>
-                <p>Descripción de Miembro 4.</p>
-            </div>
-            <div className="col-md-4 miembroEquipoMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 5" className='p-3'/>
-                <p>Descripción de Miembro 5.</p>
-            </div>
-            <div className="col-md-4 miembroEquipoMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3'/>
-                <p>Descripción de Miembro 6.</p>
-            </div>
+            <article className="col-md-4 articleMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <div className='imgPersonajeMG w-100 justify-content-center'>
+                    <p className=' fs-4 textMienbroMG '>Descripción de Miembro 6.</p>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                </div>
+            </article>
+            <article className="col-md-4 articleMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <div className='imgPersonajeMG  w-100'>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                </div>
+            </article>
+            <article className="col-md-4 articleMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <div className='imgPersonajeMG  w-100'>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                </div>
+            </article>
+            <article className="col-md-4 articleMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <div className='imgPersonajeMG  w-100'>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                </div>
+            </article>
+            <article className="col-md-4 articleMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <div className='imgPersonajeMG  w-100'>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                </div>
+            </article>
+            <article className="col-md-4 articleMG">
+                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <div className='imgPersonajeMG  w-100'>
+                    <p className=' textMienbroMG '>Descripción de Miembro 6.</p>
+                </div>
+            </article>
         </div>
     </div>
 
