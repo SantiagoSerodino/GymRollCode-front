@@ -39,3 +39,11 @@
   --color-5-mas-oscuro: #00F0A0;
   --color-5-mas-claro: #02F8C4;
 }
+
+body {
+  margin: 0;
+  /* display: flex;
+  place-items: center; */
+  min-width: 320px;
+  height: 100vh;
+}
