@@ -13,9 +13,9 @@ const Footer = () => {
                         <img className=' imgLogoFooter ' src='src/assets/logoPagina3.png' alt='logo de pagina' />
                     </div>
                     <ul className='textoFooterMG my-2 col-md-4 justify-content-evenly list-unstyled d-flex' >
-                        <li className=' py-2  col-md-4 text-center'><a href='#' className=' nav-link text-white mx-2'>Home</a></li>
+                        <li className=' py-2  col-md-4 text-center'><a href='/' className=' nav-link text-white mx-2'>Home</a></li>
                         <li className=' py-2 col-md-4 text-center'><a href='#' className=' nav-link text-white mx-2'>Planes-Fit</a></li>
-                        <li className=' py-2 col-md-4 text-center'><a href='#' className=' nav-link text-white mx-2'>Nosotros</a></li>
+                        <li className=' py-2 col-md-4 text-center'><a href='/about' className=' nav-link text-white mx-2'>Nosotros</a></li>
                     </ul>
                 </div>
 
