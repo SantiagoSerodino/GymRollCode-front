@@ -17,7 +17,7 @@ const ErrorScreen = () => {
                   </div>
                   <div className="text-center pb-2">
                   <h1 className=" text-uppercase fs-4 p-4">No se pudo conectar</h1>
-                  <a href="/" className="btn  text-light   my-2">HOME</a>
+                  <a href="/" className="btn  text-light bg-dark my-2">HOME</a>
                   </div>
                   <div className="container text-center pt-2">
                      <div className="row  copyrightMG">
