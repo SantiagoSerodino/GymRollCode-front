@@ -1,10 +1,13 @@
 import React from 'react';
 import CardProduct from '../components/generals/CardProduct/CardProduct';
 import Clima from '../Components/Clima/Clima'
+import Instructores from '../Components/Specific/Instructores/Instructores';
+import '../pages/StyleHomeScreen.css';
 
 const HomePage = () => {
   return (
     <>
+    <div className="container-fluid fondo">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-9">
@@ -33,10 +36,15 @@ const HomePage = () => {
             <Clima/>
           </div>
         </div>
+        <div className='profesoresMG'>
+          <Instructores/>
+        </div>
       
       </div>
+
+    </div>
     </>
   );
 };
 
-export default HomePage 
+export default HomePage

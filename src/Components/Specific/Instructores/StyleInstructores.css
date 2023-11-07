@@ -1,0 +1,75 @@
+:root{
+    --color-1: #FFFFFF;
+    --color-2: #010101;
+    --color-3: #343232;
+    --color-4: #5D5D5E;
+    --color-5: #01F8B4;
+
+    --color-1: #FFFFFF;
+    --color-1-más-oscuro: #F0F0F0;
+    --color-1-más-claro: #FFFAFA;
+
+    --color-2: #010101;
+    --color-2-más-oscuro: #000000;
+    --color-2-más-claro: #020202;
+
+    --color-3: #343232;
+    --color-3-más-oscuro: #2A2929;
+    --color-3-más-claro: #3A3939;
+
+    --color-4: #5D5D5E;
+    --color-4-más-oscuro: #535252;
+    --color-4-más-claro: #626262;
+
+    --color-5: #01F8B4;
+    --color-5-más-oscuro: #00F0A0;
+    --color-5-más-claro: #02F8C4;
+}
+.instructoresMG{
+    background-color: var(--color-2-más-oscuro);
+}
+.instructoresMG h1{
+    color: var(--color-5);
+}
+
+.sectionInstrucMG{
+    display: flex;
+ max-width: 600px;
+    height: 530px;
+}
+.sectionInstrucMG .imgMG{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .5;
+    transition: .7s ease;
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+
+}
+.sectionInstrucMG .imgMG:hover {
+    cursor: crosshair;
+    width: 250px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.imagenn{
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.imgMG h5{
+    position: absolute;
+    color: var(--color-5-más-oscuro);
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 300%;
+    transition: .5s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
