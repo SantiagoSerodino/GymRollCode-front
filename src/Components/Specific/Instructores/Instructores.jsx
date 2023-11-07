@@ -4,13 +4,13 @@ import '../Instructores/StyleInstructores.css'
 const Instructores = () => {
     return (
         <>
-        <div className='instructoresMG pb-5'>
+        <div className='instructoresMG container pb-5'>
         <h1 className='  py-4' >
             Nuestros Instructores 
         </h1>
         <div className='row'>
         <section className='col-12 justify-content-center sectionInstrucMG'>
-        <div className=" imgMG">
+        <div className=" container imgMG">
             <img src="../src/assets/Instructores/instructor4.jpg" className="imagenn " alt="..."/>
             <h5 className="card-img-overlay ">Mario Baracus </h5>
         </div>

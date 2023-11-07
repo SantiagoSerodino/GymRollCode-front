@@ -29,12 +29,12 @@
     background-color: var(--color-2-más-oscuro);
 }
 .instructoresMG h1{
-    color: var(--color-5-más-oscuro);
+    color: var(--color-5);
 }
 
 .sectionInstrucMG{
     display: flex;
-    /* width: 800px; */
+ max-width: 600px;
     height: 530px;
 }
 .sectionInstrucMG .imgMG{
@@ -43,6 +43,11 @@
     object-fit: cover;
     opacity: .5;
     transition: .7s ease;
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+
 }
 .sectionInstrucMG .imgMG:hover {
     cursor: crosshair;
@@ -60,7 +65,11 @@
 .imgMG h5{
     position: absolute;
     color: var(--color-5-más-oscuro);
-    top: 80%;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 300%;
-    transition: .2s ease;
+    transition: .5s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
+
