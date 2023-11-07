@@ -1,13 +1,24 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../footer/styleFooter.css'
 
 
 
 const Footer = () => {
+    const [showFooter, setShowFooter] = useState(true)
+    const location= useLocation()
+    useEffect(() => {
+        if(location.pathname === '/error'|| location.pathname === '/register' ){
+        setShowFooter(false)
+        }else{
+        setShowFooter(true)
+        }
+    }, [location])
     return (
     <>
         
-            <footer className='py-2 footerMG  container-fluid'>
+            <footer className={`py-2 footerMG  container-fluid ${!showFooter && 'd-none'}`}>
                 <div className='row align-items-end justify-content-between border-bottom'>
                     <div className='col-md-4 col-lg-2 pb-2 px-3 px-md-2  logoFooterMG'>
                         <img className=' imgLogoFooter ' src='src/assets/logoPagina3.png' alt='logo de pagina' />

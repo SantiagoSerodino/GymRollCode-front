@@ -1,6 +1,6 @@
 import React from 'react';
 import CardProduct from '../components/generals/CardProduct/CardProduct';
-import Clima from '../Components/Clima/Clima'
+import Clima from '../Components/Specific/Clima/Clima'
 import Instructores from '../Components/Specific/Instructores/Instructores';
 import '../pages/StyleHomeScreen.css';
 
