@@ -25,3 +25,35 @@
     --color-5-más-oscuro: #00F0A0;
     --color-5-más-claro: #02F8C4;
 }
+.sectionInstrucMG{
+    display: flex;
+    /* width: 800px; */
+    height: 530px;
+}
+.sectionInstrucMG .imgMG{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .5;
+    transition: .5s ease;
+}
+.sectionInstrucMG .imgMG:hover {
+    cursor: crosshair;
+    width: 250px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.imagenn{
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.imgMG h5{
+    position: absolute;
+    color: var(--color-5-más-oscuro);
+    top: 80%;
+    font-size: 300%;
+    transition: .2s ease;
+}
