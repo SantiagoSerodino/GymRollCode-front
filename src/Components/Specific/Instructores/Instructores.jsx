@@ -10,7 +10,7 @@ const Instructores = () => {
         </h1>
         <div className='row'>
         <section className='col-12 justify-content-center sectionInstrucMG'>
-        <div className=" container imgMG">
+        <div className="imgMG">
             <img src="../src/assets/Instructores/instructor4.jpg" className="imagenn " alt="..."/>
             <h5 className="card-img-overlay ">Mario Baracus </h5>
         </div>
