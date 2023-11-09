@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import img from '../../../assets/logoPagina3.png'
 import NavItem from './NavItem';
 import './Navbar.css';
@@ -6,7 +7,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Navbar = () => {
     const [changeButton, setChangeButton] = useState(false);
-    
+
+    const [showNav, setshowNav] = useState(true)
+    const location= useLocation()
+    useEffect(() => {
+        if(location.pathname === '/error'|| location.pathname === '/register'){
+        setshowNav(false)
+        }else{
+        setshowNav(true)
+        }
+    }, [location])
+
     const toggleButton = () => {
         setChangeButton(!changeButton)
     };
@@ -19,12 +30,12 @@ const Navbar = () => {
     }
 
     return (
-        <div className='navDiv'>
+        <div className={`navDiv ${!showNav && 'd-none'}`}>
             <img className="logo" src={img} alt="logo"/>
-            <button className='openMenu' onClick={toggleFunctions}><i class="bi bi-list"></i></button>
+            <button className='openMenu' onClick={toggleFunctions}><i className="bi bi-list"></i></button>
 
             <nav id="nav" className="nav">
-            <button className='closeMenu' onClick={toggleFunctions}><i class="bi bi-x"></i></button>               
+            <button className='closeMenu' onClick={toggleFunctions}><i className="bi bi-x"></i></button>               
                 <ul className='navList'>
                     <NavItem texto={"Inicio"}/>
                     <NavItem texto={"Sobre Nosotros"}/>
