@@ -1,18 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ButtonPlan from './ButtonPlan';
+
 
 
 const PlanCard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const page = useHistory();
 
   const handleButtonClick = () => {
-    if (!isAuthenticated) {
-      <Link to="/login"></Link>
+    if (isAuthenticated) {
+      history.push('/login')
     } else {
       setIsAuthenticated(true);
-      <Link to="/"></Link>
+      history.push('/')
     }
   }
 
