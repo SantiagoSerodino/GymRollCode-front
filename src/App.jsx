@@ -6,6 +6,7 @@ import Footer from './Components/generals/footer/Footer'
 import './App.css';
 import Navbar from './Components/generals/Navbar/Navbar';
 import About from './pages/About/About';
+import ContactUs from './pages/ContactUs/ContactUs';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
+          <Route path='/contactanos' element={<ContactUs/>} />
       </Routes>
       <Footer/>
       </BrowserRouter>
