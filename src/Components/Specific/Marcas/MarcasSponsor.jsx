@@ -5,7 +5,7 @@ const MarcasSponsor = () => {
     return (
         <>
 
-            <div className=' py-4 sliderMG'>
+            <div className='py-4 sliderMG container'>
                 <div className='slideTrackMG'>
                     <div className='slideTheMG  px-4'>
                         <img src="../src/assets/marcas/marca1.png" alt="marca sponsor" />

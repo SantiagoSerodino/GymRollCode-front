@@ -10,12 +10,12 @@ const HomePage = () => {
     <>
     <div className="container-fluid fondo">
 
-      <div className="container">
-        <div className='sponsorMG'> 
+        <div className=''> 
         <MarcasSponsor/>
         </div>
-        <div className="row">
-          <div className="col-12 col-md-9">
+      <div className="container">
+        <div className="row justify-content-around">
+          <div className="col-12 col-md-8 col-xl-9">
             <div className="row justify-content-center">
             <div className="col-12 col-md-5 col-lg-4 mb-4">
               <CardProduct image='/images/botella-termica.jpg' title="Botella" description=""/>
@@ -37,7 +37,7 @@ const HomePage = () => {
             </div>
           </div>
           </div>
-          <div className="col-12 col-md-3">
+          <div className="col-12 col-md-4 col-xl-3">
             <Clima/>
           </div>
         </div>
