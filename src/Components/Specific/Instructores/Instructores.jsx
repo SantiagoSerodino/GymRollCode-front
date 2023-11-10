@@ -38,7 +38,7 @@ const Instructores = () => {
                     <div className="imgMG">
                         <img src="../src/assets/Instructores/instructor5.jpeg" className="imagenn" alt="..."
                             onMouseEnter={() => handleMouseEnter('catherine')} onMouseLeave={() => handleMouseLeave('catherine')}/>
-                        <h5 className={`card-img-overlay ${instructorHoverStates.catherine ? '' : 'd-none'}`}>Caterine Fulo </h5>
+                        <h5 className={`card-img-overlay ${instructorHoverStates.catherine ? '' : 'd-none'}`}>Caterine Fulop </h5>
                     </div>
         
                     <div className="imgMG">

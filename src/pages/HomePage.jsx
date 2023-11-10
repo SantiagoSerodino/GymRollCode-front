@@ -2,15 +2,20 @@ import React from 'react';
 import CardProduct from '../components/generals/CardProduct/CardProduct';
 import Clima from '../Components/Specific/Clima/Clima'
 import Instructores from '../Components/Specific/Instructores/Instructores';
+import MarcasSponsor from '../Components/Specific/Marcas/MarcasSponsor';
 import '../pages/StyleHomeScreen.css';
 
 const HomePage = () => {
   return (
     <>
     <div className="container-fluid fondo">
+
+        <div className=''> 
+        <MarcasSponsor/>
+        </div>
       <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-9">
+        <div className="row justify-content-around">
+          <div className="col-12 col-md-8 col-xl-9">
             <div className="row justify-content-center">
             <div className="col-12 col-md-5 col-lg-4 mb-4">
               <CardProduct image='/images/botella-termica.jpg' title="Botella" description=""/>
@@ -32,7 +37,7 @@ const HomePage = () => {
             </div>
           </div>
           </div>
-          <div className="col-12 col-md-3">
+          <div className="col-12 col-md-4 col-xl-3">
             <Clima/>
           </div>
         </div>
