@@ -27,7 +27,6 @@
 }
 
 .sliderMG{
-    /* width: 100vw; */
     height: auto;
     margin: auto;
     overflow: hidden;
@@ -36,7 +35,7 @@
 .sliderMG .slideTrackMG{
     display: flex;
     animation: scroll 40s linear infinite;
-    width: calc(200px * 14);
+    width: calc(200px * 20);
 
 }
 .sliderMG .slideTheMG{
@@ -51,7 +50,7 @@
         transform: translateX(0);
     }
     100% {
-        -webkit-transform: translateX(calc(-200px * 7));
-        transform: translateX(calc(-200px * 7));
+        -webkit-transform: translateX(calc(-200px * 10));
+        transform: translateX(calc(-200px * 10));
     }
 }
