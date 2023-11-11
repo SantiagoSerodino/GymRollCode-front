@@ -11,10 +11,11 @@ const HomePage = () => {
   return (
     <>
     <div className="container-fluid fondo">
-      <div className=''>
+      <div className=' container-fluid'>
         <IntroPagina/>
 
       </div>
+
 
         <div className=''> 
         <MarcasSponsor/>
