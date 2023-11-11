@@ -31,7 +31,7 @@ const MarcasSponsor = () => {
                     <div className='slideTheMG px-4'>
                         <img src="../src/assets/marcas/marca8.png" alt="marca sponsor" />
                     </div>
-                    <div className='slideTheMG p-4 '>
+                    <div className='slideTheMG p-4'>
                         <img src="../src/assets/marcas/marca9.png" alt="marca sponsor" />
                     </div>
                     <div className='slideTheMG px-4'>
