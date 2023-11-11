@@ -11,7 +11,7 @@ const IntroPagina = () => {
               </div>
               <div className="headreContentMG container row justify-content-center">
                   <img className='col-12' src="../src/assets/logoPagina4.png" alt="" />
-                  <p className='col-10 text-center ' >Te brindamos un gimnasio de vanguardia que ofrece todo lo que necesitas para alcanzar tus objetivos de fitness. Contamos con equipos de última generación, entrenadores expertos e indumentaria deportiva de alta calidad </p>
+                  <p className='col-10 text-center ' >Te brindamos un gimnasio de vanguardia. Contamos con equipos de última generación, entrenadores expertos e indumentaria deportiva de alta calidad </p>
               </div>
           </div>
         </div>
