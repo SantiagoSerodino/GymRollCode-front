@@ -1,0 +1,32 @@
+.ImgSection{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.titulo{
+    color: white;
+    -webkit-text-stroke: 2px rgba(95, 158, 160, 0.673); 
+}
+.CardImg{
+    margin-top: 2rem;
+    border: 3px solid cadetblue;    
+}
+
+.CardImg:hover{
+    animation-name:imageExtended;
+    animation-duration:0.3s;
+    animation-delay: 0.35s;
+    animation-fill-mode: both;
+}
+
+@keyframes imageExtended{
+    from{
+        transform: scale(1);
+    }
+    to{
+        margin-top:5rem;
+        transform: scale(1.25);
+    }
+}
+
