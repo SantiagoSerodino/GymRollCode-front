@@ -29,7 +29,19 @@
 .contenedorAutoEmailMG{
     background-color: var(--color-3);
     color: var(--color-5-más-claro);
+    border-radius: 10px;
+
 }
-.formularioMG .btn{
-    
+.tituloMG{
+    font-size: 1.3rem;
+    margin: auto;
+}
+
+.campoMG{
+    border-radius: 10px;
+}
+.botonMG{
+    width: 12rem;
+    color: var(--color-5-más-claro);
+    border-radius: 25px;
 }

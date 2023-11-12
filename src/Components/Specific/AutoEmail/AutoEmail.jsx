@@ -23,39 +23,69 @@ const AutoEmail = () => {
 
   return (
     <>
-    <div className="container  w-50 contenedorAutoEmailMG">
-      <div className="row fs-2 justify-content-between ">
-      <h1 className=''>consulta por tus planes</h1>
-        <form className=' formularioMG' ref={form} onSubmit={sendEmail}>
-          <div className="mb-3 d-flex justify-content-around">
-            <label  className=" tituloMG form-label w-50">Nombre: </label>
-            <input className='campoMG w-50' type="text" name="name" />
+
+
+        <div className="container ">
+          <div className="container my-5 py-3 col-12 col-md-6 contenedorAutoEmailMG">
+          <div className="row justify-content-between">
+            <h1 className="col-12 py-3">Consulta por tus planes</h1>
+            <form className="formularioMG" ref={form} onSubmit={sendEmail}>
+              <div className="row mb-3">
+                <div className="col-6 d-flex justify-content-end">
+                  <label className="tituloMG  form-label">Nombre:</label>
+                </div>
+                <div className="col-6 d-flex justify-content-start">
+                  <input className="campoMG w-100" type="text" name="name" />
+                </div>
+              </div>
+              <div className="row mb-3">
+                <div className="col-6 d-flex justify-content-end">
+                  <label className="tituloMG form-label">Apellido:</label>
+                </div>
+                <div className="col-6 d-flex justify-content-start">
+                  <input className="campoMG w-100" type="text" name="last" />
+                </div>
+              </div>
+              <div className="row mb-3">
+                <div className="col-6 d-flex justify-content-end">
+                  <label className="tituloMG form-label">Celular / Teléfono:</label>
+                </div>
+                <div className="col-6 d-flex justify-content-start">
+                  <input className="campoMG w-100" type="number" name="phone" />
+                </div>
+              </div>
+              <div className="row mb-3">
+                <div className="col-6 d-flex justify-content-end">
+                  <label className="tituloMG form-label">Email:</label>
+                </div>
+                <div className="col-6 d-flex justify-content-start">
+                  <input className="campoMG w-100" type="email" name="email" />
+                </div>
+              </div>
+              <div className="row mb-3">
+                <div className="col-6 d-flex justify-content-end">
+                  <label className="tituloMG form-label">Planes disponibles:</label>
+                </div>
+                <div className="col-6 d-flex justify-content-start">
+                  <Form.Select aria-label="Default select example" className="campoMG w-100" name="opcion">
+                    <option>Selecciona el tipo de plan</option>
+                    <option value="MUSCULACION">MUSCULACION</option>
+                    <option value="CLASES">CLASES</option>
+                    <option value="CLASES">FULL</option>
+                  </Form.Select>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 d-flex justify-content-center">
+                  <input className=" botonMG bg-black" type="submit" value="Send" />
+                </div>
+              </div>
+            </form>
           </div>
-          <div className="mb-3 d-flex justify-content-around">
-            <label  className=" tituloMG form-label">Apellido:</label>
-            <input className='campoMG w-50' type="text" name="last" />
+
           </div>
-          <div className="mb-3 d-flex justify-content-around">
-            <label  className=" tituloMG form-label">Celular / Telfono:</label>
-            <input className='campoMG w-50' type="number" name="phone" />
-          </div>
-          <div className="mb-3 d-flex justify-content-around">
-            <label className=" tituloMG form-label">Email:</label>
-            <input className='campoMG w-50' type="email" name="email" />
-          </div>
-          <div className=' d-flex justify-content-around'>
-            <label className=" tituloMG form-label w-50">Planes disponibles:</label>
-            <Form.Select aria-label="Default select example" className='campoMG w-50' name="opcion">
-              <option className=''>Seleciona el tipode plan</option>
-              <option value="MUSCULACION">MUSCULACION</option>
-              <option value="CLASES">CLASES</option>
-              <option value="CLASES">FULL</option>
-            </Form.Select>
-          </div>
-          <input className="btn btn-primary" type="submit" value="Send" />
-        </form>
-      </div>
-    </div>
+        </div>
+
 
       </>
   );
