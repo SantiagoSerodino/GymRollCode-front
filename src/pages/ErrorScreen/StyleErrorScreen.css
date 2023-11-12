@@ -4,6 +4,6 @@
     color: #fff;
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(52,50,50,1) 68%, rgba(93,93,94,1) 100%);
-    width: auto;
+    width: 100vw;
     height: 100vh;
 }

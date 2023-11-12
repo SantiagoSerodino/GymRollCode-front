@@ -1,0 +1,97 @@
+:root{
+    --color-1: #FFFFFF;
+    --color-2: #010101;
+    --color-3: #343232;
+    --color-4: #5D5D5E;
+    --color-5: #01F8B4;
+
+    --color-1: #FFFFFF;
+    --color-1-más-oscuro: #F0F0F0;
+    --color-1-más-claro: #FFFAFA;
+
+    --color-2: #010101;
+    --color-2-más-oscuro: #000000;
+    --color-2-más-claro: #020202;
+
+    --color-3: #343232;
+    --color-3-más-oscuro: #2A2929;
+    --color-3-más-claro: #3A3939;
+
+    --color-4: #5D5D5E;
+    --color-4-más-oscuro: #535252;
+    --color-4-más-claro: #626262;
+
+    --color-5: #01F8B4;
+    --color-5-más-oscuro: #00F0A0;
+    --color-5-más-claro: #02F8C4;
+}
+
+.contenedor{
+    height: 70vh;
+    overflow: hidden;
+}
+.hederMG{
+    display: grid;
+    place-content: center;
+}
+.contentMG{
+    margin: 0;
+}
+.videoMG video {
+    position: absolute;
+    top: 50;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 70%; 
+    object-fit: cover; 
+    opacity: .35;
+    z-index: 1;
+    }
+
+/* texto de imagen  ------------------------------*/
+
+
+.headreContentMG{
+    position: relative;
+    z-index: 2;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    max-height: 50%; 
+    display: grid;
+    place-content: center;
+}
+.headreContentMG img{
+    height: 50% ;
+    width: auto;
+} 
+
+.headreContentMG p{
+    font-size: 2.3rem;
+    overflow: hidden;
+    color: var(--color-5-más-oscuro);
+
+}
+
+@media (max-width: 830px) {
+    .headreContentMG{
+        top: 0%;
+        
+    }
+
+    .headreContentMG img{
+        padding-top: 20px;
+        height: 30% ;
+        width: auto;
+    } 
+    
+    .headreContentMG p{
+        font-size: 1.5rem;
+        overflow: hidden;
+        color: var(--color-5-más-oscuro);
+    
+    }
+    }
+
