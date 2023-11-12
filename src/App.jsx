@@ -7,6 +7,7 @@ import './App.css';
 import Navbar from './Components/generals/Navbar/Navbar';
 import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
+import Planes from './pages/planes/Planes';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contactanos' element={<ContactUs/>} />
+          <Route path='/planes' element={<Planes/>} />
+
       </Routes>
       <Footer/>
       </BrowserRouter>
