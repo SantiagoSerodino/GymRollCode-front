@@ -7,6 +7,7 @@ import MarcasSponsor from '../Components/Specific/Marcas/MarcasSponsor';
 import IntroPagina from '../Components/Specific/IntroPagina/IntroPagina';
 import '../pages/StyleHomeScreen.css';
 
+
 const HomePage = () => {
   return (
     <>
@@ -52,6 +53,7 @@ const HomePage = () => {
         <div className='profesoresMG'>
           <Instructores/>
         </div>
+
       
       </div>
 
