@@ -26,22 +26,22 @@ const HomePage = () => {
             <div className="row justify-content-center">
               {/* <PlanCard/> */}
             <div className="col-12 col-md-5 col-lg-4 mb-4">
-              <CardProduct image='/images/botella-termica.jpg' title="Botella" description=""/>
+              <CardProduct image='/images/botella-termica.jpg' title="Botella" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="Adquirida unicamente en el local"/>
             </div>
             <div className="col-12 col-md-5 col-lg-4 mb-4">
-              <CardProduct image='/images/remera-mujer.jpg' title="Remera-mujer" />
+              <CardProduct image='/images/remera-mujer.jpg' title="Remera-mujer" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="Adquirida unicamente en el local"/>
             </div>
             <div className="col-12 col-md-5 col-lg-4 mb-4">
-              <CardProduct image='/images/remera-hombre.webp' title="Remera-hombre" />
+              <CardProduct image='/images/remera-hombre.webp' title="Remera-hombre" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="Adquirida unicamente en el local" />
             </div>
             <div className="col-12 col-md-5 col-lg-4 mb-4">
-              <CardProduct image='/images/proteina-hombre.webp' title="Proteina-hombre" />
+              <CardProduct image='/images/proteina-hombre.webp' title="Proteina-hombre" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="Adquirida unicamente en el local" />
             </div>
             <div className="col-12 col-md-5 col-lg-4 mb-4">
-              <CardProduct image='/images/proteina-mujer.jpg' title="Proteina-mujer" />
+              <CardProduct image='/images/proteina-mujer.jpg' title="Proteina-mujer" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="Adquirida unicamente en el local" />
             </div>
             <div className="col-12 col-md-5 col-lg-4 mb-4">
-              <CardProduct image='/images/combo.webp' title="Combo" />
+              <CardProduct image='/images/combo.webp' title="Combo" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="Adquirida unicamente en el local" />
             </div>
           </div>
           </div>
