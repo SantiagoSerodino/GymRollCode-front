@@ -26,7 +26,7 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('', loginForm)
+    axios.post('/login', loginForm)
     .then((response) => {
       if (response.status !== 201) throw new Error("Hubo un error")
     })
@@ -36,7 +36,7 @@ const LoginForm = () => {
   
   return (
 
-      <div className='container-fluid gradient'>
+      <div className='container-fluid  gradient'>
 
         <div className='row justify-content-center'>
 
