@@ -1,17 +1,29 @@
 import React from 'react';
 import PlanCard from '../Components/generals/PlanCard/PlanCard';
 import CardProduct from '../components/generals/CardProduct/CardProduct';
-import Clima from '../Components/Clima/Clima'
+import Clima from '../Components/Specific/Clima/Clima'
 import Instructores from '../Components/Specific/Instructores/Instructores';
+import MarcasSponsor from '../Components/Specific/Marcas/MarcasSponsor';
+import IntroPagina from '../Components/Specific/IntroPagina/IntroPagina';
 import '../pages/StyleHomeScreen.css';
+
 
 const HomePage = () => {
   return (
     <>
     <div className="container-fluid fondo">
+      <div className=' container-fluid'>
+        <IntroPagina/>
+
+      </div>
+
+
+        <div className=''> 
+        <MarcasSponsor/>
+        </div>
       <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-9">
+        <div className="row justify-content-around">
+          <div className="col-12 col-md-8 col-xl-9">
             <div className="row justify-content-center">
              
             <div className="col-12 col-md-5 col-lg-4 mb-4">
@@ -34,7 +46,7 @@ const HomePage = () => {
             </div>
           </div>
           </div>
-          <div className="col-12 col-md-3">
+          <div className="col-12 col-md-4 col-xl-3">
             <Clima/>
           </div>
         </div>
@@ -42,6 +54,7 @@ const HomePage = () => {
           <Instructores/>
           <PlanCard/>
         </div>
+
       
       </div>
 

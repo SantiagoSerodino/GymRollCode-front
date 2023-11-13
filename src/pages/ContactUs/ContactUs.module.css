@@ -1,0 +1,104 @@
+.section{
+    background-image: url(https://img.freepik.com/foto-gratis/pesas-ejercicio-mancuernas-hierro-placas-extra_1423-223.jpg?w=1380&t=st=1699576750~exp=1699577350~hmac=09efc8fe558b2096b63a10ed03691e117c006492e25290c382f6c617791430cc);
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+} 
+
+.divMap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: 3px solid cadetblue;
+    border-radius: 2rem;
+    margin: 3rem;
+    height: auto;
+}
+
+.ul{
+    list-style: none;
+    color: cadetblue;
+    height: auto;
+}
+
+.iframe{
+    border-radius: 30px;
+    width: 90vh;
+    height: 70%;
+}
+
+.coments{
+    padding: 1rem;
+    margin-right: 2rem ;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    width: 90%;
+    outline: none;
+}
+.coments:focus{
+    border: 3px solid cadetblue;
+}
+.button-container {
+    display: flex;
+}
+.submitButton{
+    
+    border: none;
+    border-radius: 2rem;
+    background-color:#00F0A0;
+    color: black;
+    text-decoration: none;
+    margin-top:1.5rem;
+    margin-left:70%;
+    
+}
+.navLink{
+    text-decoration: none;
+}
+
+p{
+    text-align: start;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 1585px) {
+    .divInput{
+        width: 60%;
+        margin-left:25%;
+    }
+    .divMap{
+        height: 50vw;
+        margin-left:25%;
+        width: 60%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .section{
+        display: block;
+        padding-bottom: 30px;      
+    }
+
+}
+
+@media screen and (max-width: 758px){
+    .divInput{
+        width: 70%;
+        margin-left:15%;
+    }
+    .divMap{
+        width: 70%;
+        margin-left:15%;
+    }
+}
