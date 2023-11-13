@@ -7,7 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 const AdminClassesPage = () => {
     //Direccion url de la Api
     const Url="https://gym-roll.onrender.com/classes/";
-    //Seccion para donde declaramos nuestros estados
+    //Seccion donde declaramos nuestros estados
     const [classesList,setClassesList] = useState ([]);
     const [addClassModal,setAddClassModal] = useState (false);
     const [updateFlag, setUpdateFlag] = useState(false);

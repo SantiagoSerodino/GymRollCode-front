@@ -5,15 +5,28 @@ import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const TableComponent = () => {
+    //Direccion url de la Api
+    const Url="https://gym-roll.onrender.com/user/";
+    //Seccion donde declaramos los estados
+    const [userList,setUserList] = useState ([]);
     
-    const users=[
-        {email: "user2@gmail.com",name: "Paola",lastName: "Argento",contractedPlan: "full"},
-        {email: "user1@gmail.com",name: "Mirtha",lastName: "Legrand",contractedPlan: "full",classes: "Pilates"},
-        {email: "user3@gmail.com",name: "Candela",lastName: "Ylamoto",contractedPlan: "full",classes: "Aerobox"},
-        {email: "user4@gmail.com",name: "Tia",lastName: "Paola",contractedPlan: "full",classes: "Zumba"},
-        {email: "user5@gmail.com",name: "Tarro",lastName: "Bicicleta",contractedPlan: "full",classes:"Zumba"}
-    ]
-    const [usersList,setUsersList] = useState (users);
+    useEffect(()=>{
+        const petitionGet = async ()=> {
+            try {
+                //realiza la peticion GET a la base de datos
+                const response = await axios.get(Url);
+                const data = response.data;
+                //Guarda la informacion de la api en nuestro estado
+                setUserList(data);
+                
+            } catch (error) {
+                //Linea para manejar errores
+                console.log("No se pudo obtener la informacion de la API",error.message);
+            }
+        }
+        
+        petitionGet();
+    },[]);
 
   return (
     <>
@@ -30,7 +43,7 @@ const TableComponent = () => {
                 </tr>
             </thead>
             <tbody>
-                {usersList.map((user) => {
+                {userList.map((user) => {
                     return(
                     <tr>
                         <td>{user.name}</td>
@@ -40,6 +53,7 @@ const TableComponent = () => {
                         <td>{user.classes}</td>
                         <td>
                             <button className='btn btn-danger'><i class="bi bi-trash3"></i></button>
+                            <button className='btn btn-danger'><i className="bi bi-trash3"></i></button>
 
                         </td>
                     </tr>
