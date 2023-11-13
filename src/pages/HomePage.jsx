@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className="row">
           <div className="col-12 col-md-9">
             <div className="row justify-content-center">
-              <PlanCard/>
+             
             <div className="col-12 col-md-5 col-lg-4 mb-4">
               <CardProduct image='/images/botella-termica.jpg' title="Botella" description=""/>
             </div>
@@ -40,6 +40,7 @@ const HomePage = () => {
         </div>
         <div className='profesoresMG'>
           <Instructores/>
+          <PlanCard/>
         </div>
       
       </div>
