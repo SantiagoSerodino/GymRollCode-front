@@ -39,7 +39,6 @@ const TableComponent = () => {
                         <td>{user.contractedPlan}</td>
                         <td>{user.classes}</td>
                         <td>
-                            <button className='btn btn-primary'><i class="bi bi-pencil-square"></i></button>
                             <button className='btn btn-danger'><i class="bi bi-trash3"></i></button>
 
                         </td>

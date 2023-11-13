@@ -4,40 +4,121 @@ import ColumnComponent from '../../../Components/generals/Table/ColumnComponent'
 import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const TableComponent = () => {
-    const Url="http://localhost:8000/user/";
-    const clases=[
-      {name: "CrossFit",date: "Martes y Jueves",hour: "18:00 a 19:00",teacher: {name:"Julio",lastName: "Lagorda"},users: [{name: "Braian",lastName: "Mena"},{name: "Sol",lastName: "Toshiba"}]},
-      {name: "Pilates",date: "Lunes y Miercoles","hour": "16:30 a 18:00",teacher: {"name": "Patricio","lastName": "Estrella"},"users": []},
-      {name: "Zumba",date: "Lunes y Miercoles",hour: "18:30 a 20:00",teacher: {name:"Juan Martin",lastName: "Chaile"},"users": [{name: "Ismael",lastName: "Pacheco"}]},
-      {name: "Entrenamiento Funcional",date: "Viernes",hour: "17:00 a 18:00",users: [],teacher: {name: "Pablito",lastName: "Loquito"}}
-    ]
-    const [clasesList,setClasesList] = useState (clases);
+const AdminClassesPage = () => {
+    //Direccion url de la Api
+    const Url="https://gym-roll.onrender.com/classes/";
+    //Seccion para donde declaramos nuestros estados
+    const [classesList,setClassesList] = useState ([]);
     const [addClassModal,setAddClassModal] = useState (false);
+    const [updateFlag, setUpdateFlag] = useState(false);
+    const [ClassForm,setClassForm]= useState({
+        name:'',
+        date:'',
+        hour:'',
+    })
+    const [modalType,setModalType] = useState('');
+    const [modalDelete,setModalDelete] = useState(false);
+
+    //SECCION DE PETICIONES HTML
+
+    //Función para hacer petición GET,mostrar los usuarios y mostrarlos en tiempo real
+    useEffect(()=>{
+        const petitionGet = async ()=> {
+            try {
+                //realiza la peticion GET a la base de datos
+                const response = await axios.get(Url);
+                const data = response.data;
+                //Guarda la informacion de la api en nuestro estado
+                setClassesList(data);
+                
+            } catch (error) {
+                //Linea para manejar errores
+                console.log("No se pudo obtener la informacion de la API",error.message);
+            }
+        }
+        
+        petitionGet();
+    },[updateFlag]);
     
-    // useEffect(()=> {
-    //     const fetchData = async () => {
-    //         try{
-    //             const response = await axios.get(Url)
-    //             // const data = response.data;
-    //             console.log(response);
-    //         } catch (error){
-    //             console.log("Error al obtener los datos de la API",error);
-    //         }
-    //     };
-    //     fetchData();
-    // } ,[]);
+    //Funcion para hacer petición POST y crear una clase
+    const petitionPost = async () => {
+        try {
+            
+            await axios.post(`${Url}/register`,ClassForm)
+            .then(response =>{
+                //Si la peticion se hace correctamente ejecuta la función para cerrar el modal y cargar nuevamente la lista con las clases
+                toggleModal();
+                // Actualiza el flag para que el useEffect se ejecute
+                setUpdateFlag((prev) => !prev); 
+            })
+            
+        } catch (error) {
+            //Linea para manejar errores
+            console.log("No se pudo crear la clase",error.message);
+        }
+    }
+
+    //Función para hacer petición PATCH y editar una clase
+    const petitionPatch = async () => {
+        try{
+            await axios.patch(`${Url}edit`,ClassForm)
+            .then((response) =>{
+                toggleModal();
+                setUpdateFlag((prev) => !prev);
+            })
+        } catch (error) {
+            //Linea para manejar errores
+            console.log("No se pudo editar la clase",error.message);
+        }
+    }
+
+    //Funcion para hacer peticion DELETE y eliminar una clase
+    const petitionDelete = async () => {
+        try{
+            await axios.delete(Url,{ data: { name: ClassForm.name } })
+            .then((response) => {
+                setModalDelete(false);
+                setUpdateFlag((prev) => !prev);
+            })
+        }catch(error){
+            console.log("No se pudo eliminar la clase",error.message);
+        }
+
+    }
 
 
+    //FUNCIONES AUXILIARES
+
+    //Función para abrir y cerrar el modal
     const toggleModal = () => {
        setAddClassModal(!addClassModal)
     }
+    //Función para cargar el formulario con datos ingresados y hacer la peticion post
+    const handleChange=(e)=>{
+        e.persist();
+        setClassForm ({
+            ...ClassForm,
+            [e.target.name]: e.target.value
+        })
+        console.log(ClassForm);
+    }
+    
+    //Función para seleccionar una clase y editarla
+    const selectClass = (Class)=> {
+        setModalType('actualizar')
+        setClassForm({
+            name : Class.name,
+            date: Class.date,
+            hour: Class.hour
+        })
+    }
+    
   
 
   return (
     <>
         <br/>
-        <button className="btn btn-success" onClick={toggleModal}>Agregar Clase</button>
+        <button className="btn btn-success" onClick={()=>{setClassForm(null),setModalType('crear'),toggleModal()}}>Agregar Clase</button>
         <br/><br/>
         <table className='table'>
             <thead>
@@ -51,17 +132,17 @@ const TableComponent = () => {
                 </tr>
             </thead>
             <tbody>
-                {clasesList.map((clases) => {
+                {classesList.map((Class) => {
                     return(
                     <tr>
-                        <td>{clases.name}</td>
-                        <td>{clases.date}</td>
-                        <td>{clases.hour}</td>
-                        <td>{`${clases.teacher.name} ${clases.teacher.lastName}`}</td>
-                        <td>{clases.users.map((users)=>{return(`${users.name} ${users.lastName},`)})}</td>
+                        <td>{Class.name}</td>
+                        <td>{Class.date}</td>
+                        <td>{Class.hour}</td>
+                        <td>{`${Class.teacher?Class.teacher.name:[]} ${Class.teacher?Class.teacher.lastName:[]}`}</td>
+                        <td>{Class.users.map((users)=>{return(`${users.name} ${users.lastName},`)})}</td>
                         <td>
-                            <button className='btn btn-primary'><i class="bi bi-pencil-square"></i></button>
-                            <button className='btn btn-danger'><i class="bi bi-trash3"></i></button>
+                            <button className='btn btn-primary' onClick={()=>{selectClass(Class),toggleModal()}}><i className="bi bi-pencil-square"></i></button>
+                            <button className='btn btn-danger'onClick={()=>{selectClass(Class),setModalDelete(true)}}><i className="bi bi-trash3"></i></button>
 
                         </td>
                     </tr>
@@ -70,7 +151,7 @@ const TableComponent = () => {
             </tbody>
         </table>
 
-        <Modal isOpen={addClassModal} size='lg' >
+        <Modal isOpen={addClassModal} size='lg' centered >
             <ModalHeader style={{display:'block'}}>
                 <span onClick={toggleModal} style={{float: 'right',cursor: "pointer"}}>x</span>
             </ModalHeader>
@@ -78,23 +159,36 @@ const TableComponent = () => {
             <ModalBody>
                 <div className="form-grup">
                     <label htmlFor="name">Nombre:</label>
-                    <input className='form-control' type='text' name='name' id='name'/>
+                    <input className='form-control' type='text' name='name' id='name' readOnly={modalType=='actualizar'} onChange={handleChange} value={ClassForm?ClassForm.name : '' }/>
                     <br/>
                     <label htmlFor="date">Fecha:</label>
-                    <input className='form-control' type='text' name='date' id='date'/>
+                    <input className='form-control' type='text' name='date' id='date' onChange={handleChange} value={ClassForm? ClassForm.date : ''}/>
                     <br/>
                     <label htmlFor="hour">Hora:</label>
-                    <input className='form-control' type='text' name='hour' id='hour'/>
+                    <input className='form-control' type='text' name='hour' id='hour' onChange={handleChange}value={ClassForm? ClassForm.hour: ''}/>
                 </div>
             </ModalBody>
 
             <ModalFooter>
-                <button className="btn btn-success">Insertar</button>
+                {modalType=='crear'?
+                <button className="btn btn-success" onClick={petitionPost}>Insertar</button> :
+                <button className="btn btn-primary" onClick={()=>{petitionPatch(ClassForm)}}>Editar</button>
+                }
                 <button className="btn btn-danger" onClick={toggleModal}>Cancelar</button>
+            </ModalFooter>
+        </Modal>
+
+        <Modal isOpen={modalDelete} size='lg' centered>
+            <ModalBody>
+                ¿Estas seguro que deseas eliminar esta clase? {ClassForm && ClassForm.name}
+            </ModalBody>
+            <ModalFooter>
+                <button className="btn btn-danger" onClick={petitionDelete}>Sí</button>
+                <button className="btn btn-secondary" onClick={()=>{setModalDelete(false)}}>No</button>
             </ModalFooter>
         </Modal>
     </>
   )
 }
 
-export default TableComponent;
+export default AdminClassesPage;
