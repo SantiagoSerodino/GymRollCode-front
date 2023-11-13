@@ -1,12 +1,9 @@
 import React from 'react';
-import Navbar from './Components/generals/Navbar/Navbar';
-import Clima from '../Components/Clima/Clima';
-import Footer from './components/footer/Footer';
+
 
 const PlanMusculacion = () => {
   return (
 <>
-  <Navbar />
   <div className='container-fluid'>
     <div className='container'>
       <div className='row justify-content-center'>
@@ -19,16 +16,12 @@ const PlanMusculacion = () => {
               Transforma tu cuerpo con nuestro plan básico de gimnasio. Incluye acceso limitado a nuestras instalaciones, rutinas de entrenamiento basicas y asesoramiento profesional. Descubre una nueva versión de ti mismo con nosotros.
               </p>
               <h2>Precio: $5000. mensual</h2>
-              <button className="btn btn-musc btn-primary">Registrate!</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <Clima />
-  <Footer />
 </>
   )
 }

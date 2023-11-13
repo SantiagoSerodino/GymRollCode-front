@@ -1,13 +1,9 @@
 import React from 'react';
-import Navbar from './Components/generals/Navbar/Navbar';
-import Clima from '../Components/Clima/Clima';
-import Footer from './components/footer/Footer';
 
 
 const PlanClases = () => {
   return (
     <>
-      <Navbar />
       <div className='container-fluid'>
         <div className='container'>
           <div className='row justify-content-center'>
@@ -26,9 +22,6 @@ const PlanClases = () => {
           </div>
         </div>
       </div>
-    
-      <Clima />
-      <Footer />
     </>
       )
     }
