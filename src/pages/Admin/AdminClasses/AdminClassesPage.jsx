@@ -93,17 +93,16 @@ const AdminClassesPage = () => {
     const toggleModal = () => {
        setAddClassModal(!addClassModal)
     }
-    //Función para cargar el formulario con datos ingresados y hacer la peticion post
+    //Función para cargar el formulario con datos ingresados
     const handleChange=(e)=>{
         e.persist();
         setClassForm ({
             ...ClassForm,
             [e.target.name]: e.target.value
         })
-        console.log(ClassForm);
     }
     
-    //Función para seleccionar una clase y editarla
+    //Función para seleccionar una clase y editarla y guarda los datos actuales en cada input
     const selectClass = (Class)=> {
         setModalType('actualizar')
         setClassForm({
@@ -117,9 +116,11 @@ const AdminClassesPage = () => {
 
   return (
     <>
+        {/* Boton para agregar clases */}
         <br/>
         <button className="btn btn-success" onClick={()=>{setClassForm(null),setModalType('crear'),toggleModal()}}>Agregar Clase</button>
         <br/><br/>
+        {/* Tabla de clases */}
         <table className='table'>
             <thead>
                 <tr>
@@ -134,7 +135,7 @@ const AdminClassesPage = () => {
             <tbody>
                 {classesList.map((Class) => {
                     return(
-                    <tr>
+                    <tr key={Class._id}>
                         <td>{Class.name}</td>
                         <td>{Class.date}</td>
                         <td>{Class.hour}</td>
@@ -150,14 +151,15 @@ const AdminClassesPage = () => {
                 })}
             </tbody>
         </table>
-
+        
+        {/* Modal para crear y editar una clase */}
         <Modal isOpen={addClassModal} size='lg' centered >
             <ModalHeader style={{display:'block'}}>
                 <span onClick={toggleModal} style={{float: 'right',cursor: "pointer"}}>x</span>
             </ModalHeader>
 
             <ModalBody>
-                <div className="form-grup">
+                <div className="form-group">
                     <label htmlFor="name">Nombre:</label>
                     <input className='form-control' type='text' name='name' id='name' readOnly={modalType=='actualizar'} onChange={handleChange} value={ClassForm?ClassForm.name : '' }/>
                     <br/>
@@ -178,9 +180,10 @@ const AdminClassesPage = () => {
             </ModalFooter>
         </Modal>
 
+        {/* Modal para confirmacion de eliminar clase */}
         <Modal isOpen={modalDelete} size='lg' centered>
             <ModalBody>
-                ¿Estas seguro que deseas eliminar esta clase? {ClassForm && ClassForm.name}
+                ¿Estas seguro que deseas eliminar esta clase? {ClassForm && ClassForm.name.toUpperCase()}
             </ModalBody>
             <ModalFooter>
                 <button className="btn btn-danger" onClick={petitionDelete}>Sí</button>

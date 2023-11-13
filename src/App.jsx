@@ -8,7 +8,6 @@ import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Planes from './pages/planes/Planes';
 import Login from './pages/Login'
-import AdminPage from './pages/Admin/AdminRouter';
 import './App.css';
 import AdminRouter from './pages/Admin/AdminRouter';
 
