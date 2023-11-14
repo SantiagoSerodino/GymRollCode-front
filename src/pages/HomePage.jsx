@@ -15,10 +15,7 @@ const HomePage = () => {
     <div className="container-fluid fondo">
       <div className=' container-fluid'>
         <IntroPagina/>
-
       </div>
-
-
         <div className=''> 
         <MarcasSponsor/>
         </div>
@@ -26,7 +23,6 @@ const HomePage = () => {
         <div className="row justify-content-around">
           <div className="col-12 col-md-8 col-xl-9">
             <div className="row justify-content-center">
-             
             <div className="col-12 col-md-5 col-lg-4 mb-4">
               <CardProduct image='/images/botella-termica.jpg' title="Botella" description="Botella termica de 500ml apta para deporte de acero inoxidable" brand="GymRoll" price="$9.860" importInfo="*Adquirida unicamente en el local*"/>
             </div>

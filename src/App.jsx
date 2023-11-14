@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Register from './pages/Register';
 import ErrorScreen from './pages/ErrorScreen/ErrorScreen';
@@ -33,7 +33,6 @@ function App() {
           <Route path='/musculacion' element={<PlanMusculacion/>} />
           <Route path='/clases' element={<PlanClases/>} />
           <Route path='/full' element={<PlanFull/>} />
-        
       </Routes>
       <Footer/>
       </BrowserRouter>
