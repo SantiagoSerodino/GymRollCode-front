@@ -76,7 +76,7 @@ const RegisterForm = () => {
             </div>
           </form>
         </div>
-          <a href="/" className='w-25 btn btn-outline-success'> Home </a>
+          <a href="/" className='w-25 btn btn-outline-success p-1'> Home </a>
     </div>
   )
 };
