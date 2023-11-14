@@ -26,7 +26,7 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('', loginForm)
+    axios.post('/login', loginForm)
     .then((response) => {
       if (response.status !== 201) throw new Error("Hubo un error")
     })
@@ -36,11 +36,11 @@ const LoginForm = () => {
   
   return (
 
-      <div className='container-fluid gradient'>
+      <div className='container-fluid  gradient'>
 
         <div className='row justify-content-center'>
 
-          <h1 class="text-light fw-bold mb-4">Bienvenido!</h1>
+          <h1 className="text-light fw-bold mb-4">Bienvenido!</h1>
 
             <form className='form col-12 col-sm-6 col-lg-4 colorForm' onSubmit={handleSubmit} >
 
@@ -51,7 +51,7 @@ const LoginForm = () => {
               <SubmitButton Text='Inicia Sesion'/>
             </form>
 
-            <div class="text-center mt-4">
+            <div className="text-center mt-4">
               <p className="d-inline-block text-light">¿No tienes una cuenta?</p> <Link href="/" className="text-light fw-bold" >Crea una ahora!</Link>
             </div>
 
