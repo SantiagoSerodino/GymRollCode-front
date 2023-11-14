@@ -71,7 +71,7 @@ const RegisterForm = () => {
             <InputForm label='Apellido' name={'lastName'} type='text' handleChange={(event) =>handleChange(event)} />
             <InputForm label='Email' name={'email'} type='email'handleChange={(event) => handleChange(event)} />
             <InputForm label='Password' name={'password'} type='password'handleChange={(event) => handleChange(event)} />
-            <div className='btn btn-secondary '>
+            <div className='btn btn-secondary py-1 '>
             <SubmitButton contenText='Registrarse'/>
             </div>
           </form>
