@@ -26,7 +26,7 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('/login', loginForm)
+    axios.post('https://gym-roll.onrender.com/user/login', loginForm)
     .then((response) => {
       if (response.status !== 201) throw new Error("Hubo un error");
       localStorage.setItem('user', response.data);
