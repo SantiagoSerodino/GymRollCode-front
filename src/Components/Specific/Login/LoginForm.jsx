@@ -33,7 +33,7 @@ const LoginForm = () => {
       await  axios.post('https://gym-roll.onrender.com/user/login', loginForm)
       .then((response) => {
         if (response.status !== 201) throw new Error("Hubo un error");
-        localStorage.setItem('User', response.data);
+        console.log(response.data)
         useNavigate('/')
       })
     }catch(error){
