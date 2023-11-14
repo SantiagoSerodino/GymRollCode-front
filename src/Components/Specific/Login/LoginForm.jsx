@@ -4,7 +4,7 @@ import axios from 'axios';
 import "../Login/styleLoginForm.css";
 import SubmitButton from '../../generals/LoginSubmitButton/SubmitButton';
 import LoginInputForm from '../../generals/LoginInputForm/LoginInputForm';
-import { Link, Navigate } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
@@ -26,7 +26,7 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('/login', loginForm)
+    axios.post('https://gym-roll.onrender.com/user/login', loginForm)
     .then((response) => {
       if (response.status !== 201) throw new Error("Hubo un error");
       localStorage.setItem('user', response.data);
@@ -54,7 +54,7 @@ const LoginForm = () => {
             </form>
 
             <div className="text-center mt-4">
-              <p className="d-inline-block text-light">¿No tienes una cuenta?</p> <Link href="/" className="text-light fw-bold" >Crea una ahora!</Link>
+              <p className="d-inline-block text-light">¿No tienes una cuenta?</p> <NavLink to='/register' className="text-light fw-bold" >CREA UNA AHORA!</NavLink>
             </div>
 
           </div>
