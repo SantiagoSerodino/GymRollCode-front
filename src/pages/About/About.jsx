@@ -41,31 +41,31 @@ const About = () => {
     <div className="container equipoContainerMG pb-5">
         <div className="row justify-content-evenly">
             <article className="col-md-4 articleMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <img src="../src/assets/about-img/miembro11.jpg" alt="Miembro 6" className='p-3 imgPersonaMG'/>
                 <div className='imgPersonajeMG px-3 pb-5 w-100 '>
                     <h2 className=' textMienbroMG '>Natalia Aguirre</h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <img src="../src/assets/about-img/miembro2.jpeg" alt="Miembro 6" className='p-3 imgPersonaMG'/>
                 <div className='imgPersonajeMG px-3 pb-5  w-100'>
                     <h2 className=' textMienbroMG '>Mauro Gutierrez </h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <img src="../src/assets/about-img/miembro3.jpg" alt="Miembro 6" className='p-3 imgPersonaMG'/>
                 <div className='imgPersonajeMG px-3 pb-5 w-100'>
                     <h2 className=' textMienbroMG '>Franco Margagliotti</h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <img src="../src/assets/about-img/miembro5.jpg" alt="Miembro 6" className='p-3 imgPersonaMG'/>
                 <div className='imgPersonajeMG px-3 pb-5 w-100'>
                     <h2 className=' textMienbroMG '>Santiago Serodino.</h2>
                 </div>
             </article>
             <article className="col-md-4 articleMG">
-                <img src="../src/assets/about-img/miembro1.png" alt="Miembro 6" className='p-3 imgPersonaMG'/>
+                <img src="../src/assets/about-img/miembro4.jpg" alt="Miembro 6" className='p-3 imgPersonaMG'/>
                 <div className='imgPersonajeMG px-3 pb-5 w-100'>
                     <h2 className=' textMienbroMG '>Leandro Cudmani</h2>
                 </div>

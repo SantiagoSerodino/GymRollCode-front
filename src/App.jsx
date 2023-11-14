@@ -33,7 +33,6 @@ function App() {
           <Route path='/musculacion' element={<PlanMusculacion/>} />
           <Route path='/clases' element={<PlanClases/>} />
           <Route path='/full' element={<PlanFull/>} />
-        
       </Routes>
       <Footer/>
       </BrowserRouter>
