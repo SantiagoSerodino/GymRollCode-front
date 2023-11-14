@@ -4,7 +4,7 @@ import axios from 'axios';
 import "../Login/styleLoginForm.css";
 import SubmitButton from '../../generals/LoginSubmitButton/SubmitButton';
 import LoginInputForm from '../../generals/LoginInputForm/LoginInputForm';
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
@@ -25,17 +25,22 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    axios.post('https://gym-roll.onrender.com/user/login', loginForm)
-    .then((response) => {
-      if (response.status !== 201) throw new Error("Hubo un error");
-      localStorage.setItem('user', response.data);
-      Navigate('/')
-    })
-    .catch((error) => console.log(error))
-    .finally(() => alert('Inicio sesión con exito!'))
+    petitionPost();
   };
-  
+
+  const petitionPost = async() =>{
+    try{
+      await  axios.post('https://gym-roll.onrender.com/user/login', loginForm)
+      .then((response) => {
+        if (response.status !== 201) throw new Error("Hubo un error");
+        localStorage.setItem('User', response.data);
+        useNavigate('/')
+      })
+    }catch(error){
+      console.log(error.message);
+    }
+
+  }
   return (
 
       <div className='container-fluid  gradient'>
@@ -48,8 +53,8 @@ const LoginForm = () => {
 
               <img className='logoSize mt-3 mb-3' src='src/assets/logoPagina3.png' alt='logo' />
               
-              <LoginInputForm label='Email' name='email' type='email'handleChange={(event) => handleChange(event)} />
-              <LoginInputForm label='Contraseña' name='password' type='password'handleChange={(event) => handleChange(event)} />
+              <LoginInputForm label='Email' name='email' type='email' id={'email'} handleChange={(event) => handleChange(event)} />
+              <LoginInputForm label='Contraseña' name='password' type='password' id={'password'}handleChange={(event) => handleChange(event)} />
               <SubmitButton Text='Inicia Sesion'/>
             </form>
 
