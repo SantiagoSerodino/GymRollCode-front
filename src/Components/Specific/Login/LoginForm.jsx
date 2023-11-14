@@ -61,7 +61,7 @@ const LoginForm = ({setUser}) => {
         </div>
         </form>
         <div>
-          <NavLink to='/' className='w-25 btn btn-outline-success p-1 mt-3'>Home</NavLink>
+          <NavLink to='/' className='w-25 btn btn-outline-success mt-3'>Home</NavLink>
         </div>
 
       </div>
