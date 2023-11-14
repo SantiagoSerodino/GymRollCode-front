@@ -25,7 +25,24 @@
     --color-5-más-oscuro: #00F0A0;
     --color-5-más-claro: #02F8C4;
 }
-.fondo{
-    background-color: var(--color-2);
-    height: 100vh;
+.colorFormReg {
+    background-color: #000000;
+    border-radius: 20px;
+}
+.tituloRegister{
+    font-size: 3rem;
+    color: #00F0A0;
+    text-shadow: black 0 0 2px 4px;
+}
+
+.gradientRegister {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(334deg, #01F8B4, #000000, #f7137e);
+	background-size: 180% 180%;
+	animation: gradient-animation 6s ease infinite;
+    color: var(--color-1-más-oscuro);
+}
+.botonRegistrer{
+    color: #00F0A0;
 }
