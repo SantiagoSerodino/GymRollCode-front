@@ -27,7 +27,8 @@ const Navbar = () => {
     const toggleFunctions = () => {
         toggleButton();
         toggleMenu();
-    }
+    };
+    
 
     return (
         <div className={`navDiv ${!showNav && 'd-none'}`}>
@@ -42,6 +43,8 @@ const Navbar = () => {
                     <NavItem link={"/contactanos"}text={"Contáctanos"}/>
                     <NavItem link={"/login"}text={"Iniciar Sesion"}/>
                     <NavItem link={"/register"}text={"Registrarse"}/>
+                    <NavItem link={"/admin"}text={"administración"}/>
+
                 </ul>
             </nav>
         </div>
