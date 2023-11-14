@@ -20,18 +20,22 @@ const CardProduct = ({ image, title, description, brand, price, importInfo }) =>
 
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
-        <ModalBody>
-          {description}
-          {brand}
-          {price}
-          {importInfo}
+        <ModalBody className="bg-modal-body">
+          <div className="card ">
+            <div className="card-body bg-color-item">
+               <h5 className="card-title">Descripción:</h5>
+              <p className="card-text">{description}</p>
+            </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item bg-color-item"><strong>Marca:</strong> {brand}</li>
+              <li className="list-group-item bg-color-item"><strong>Precio:</strong> {price}</li>
+              <li className="list-group-item bg-color-item "><strong>{importInfo}</strong></li>
+            </ul>
+          </div>
         </ModalBody>  
         <ModalFooter>
           <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{' '}
-          <Button color="secondary" onClick={toggle}>
-            Cancel
+            Cerrar
           </Button>
         </ModalFooter>
       </Modal>
