@@ -11,7 +11,7 @@ const Navbar = () => {
     const [showNav, setshowNav] = useState(true)
     const location= useLocation()
     useEffect(() => {
-        if(location.pathname === '/error'|| location.pathname === '/register'){
+        if(location.pathname === '/error'|| location.pathname === '/register'||location.pathname === '/login'){
         setshowNav(false)
         }else{
         setshowNav(true)

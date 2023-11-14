@@ -10,6 +10,9 @@ import Planes from './pages/planes/Planes';
 import Login from './pages/Login'
 import './App.css';
 import AdminRouter from './pages/Admin/AdminRouter';
+import PlanMusculacion from './Components/generals/PlanCard/Planes/PlanMusculacion';
+import PlanClases from './Components/generals/PlanCard/Planes/PlanClases';
+import PlanFull from './Components/generals/PlanCard/Planes/PlanFull';
 
 function App() {
   return (
@@ -27,6 +30,10 @@ function App() {
           <Route path='/contactanos' element={<ContactUs/>} />
           <Route path='/admin/*' element={<AdminRouter/>}/>
           
+          <Route path='/musculacion' element={<PlanMusculacion/>} />
+          <Route path='/clases' element={<PlanClases/>} />
+          <Route path='/full' element={<PlanFull/>} />
+        
       </Routes>
       <Footer/>
       </BrowserRouter>

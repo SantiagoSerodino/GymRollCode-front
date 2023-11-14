@@ -9,7 +9,7 @@ const Footer = () => {
     const [showFooter, setShowFooter] = useState(true)
     const location= useLocation()
     useEffect(() => {
-        if(location.pathname === '/error'|| location.pathname === '/register' ){
+        if(location.pathname === '/error'|| location.pathname === '/register'||location.pathname === '/login' ){
         setShowFooter(false)
         }else{
         setShowFooter(true)
