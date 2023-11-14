@@ -26,40 +26,43 @@
   --color-5-más-claro: #02F8C4;
 }
 
-.planes {
+ /* .planes {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+} */
+.plan-card h1 {
+  color: var(--color-5-más-claro);
 }
 
-.plan-musculacion {
-  flex: 1 140px;
-  width: 100%;
+ .plan-musculacion {
+  background-color: var(--color-2-más-claro) ;
+  color: var(--color-5-más-oscuro);
+  border-radius: 20px;
   box-sizing: border-box;
-  padding: 15px; 
   border: 1px solid #ddd; 
   margin-bottom: 20px;
-}
+} 
 
-.plan-clases{
-  flex: 1 140px;
-  width: 100%;
+ .plan-clases{
+  background-color: var(--color-2-más-claro);
+  color: var(--color-5-más-oscuro);
+  border-radius: 20px;
   box-sizing: border-box;
-  padding: 15px; 
   border: 1px solid #ddd; 
   margin-bottom: 20px;
-}
+} 
 
-.plan-full {
-  flex: 1 140px;
-  width: 100%;
+ .plan-full {
+  background-color: var(--color-2-más-claro);
+  color: var(--color-5-más-oscuro);
+  border-radius: 20px;
   box-sizing: border-box;
-  padding: 15px; 
   border: 1px solid #ddd; 
   margin-bottom: 20px;
-}
+} 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .planes {
     flex-direction: column;
   }
@@ -79,4 +82,4 @@
     margin-right: 0;
     margin-bottom: 10px;
   }
-} 
+}  */
