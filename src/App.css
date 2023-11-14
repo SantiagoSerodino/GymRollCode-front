@@ -34,3 +34,6 @@ body{
   width: auto;
   height: 100vh;
 }
+.contenedorGeneral{
+  overflow: hidden;
+}

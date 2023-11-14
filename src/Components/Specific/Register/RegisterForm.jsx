@@ -80,7 +80,7 @@ const RegisterForm = () => {
           </div>
         </form>
       </div>
-      <NavLink to='/' className='w-25 btn btn-outline-success p-1'>Home</NavLink>
+      <NavLink to='/' className='w-25 btn btn-outline-success'>Home</NavLink>
     </div>
   );
 };
