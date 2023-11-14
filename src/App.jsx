@@ -17,7 +17,7 @@ function App() {
   return (
     
     <>
-      <BrowserRouter> 
+      <BrowserRouter className="contenedorGeneral"> 
       <Navbar/>
       <Routes>
           <Route path="/" element={<HomePage />} />

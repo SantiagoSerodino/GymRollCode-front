@@ -9,6 +9,7 @@
     padding: 2rem;
     font-family: sans-serif;
     max-width: 100%;
+    overflow: hidden;
 }
 .navList{
     list-style-type: none;
