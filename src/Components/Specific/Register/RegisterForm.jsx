@@ -67,6 +67,7 @@ const RegisterForm = () => {
   return (
     <div className='container-fluid gradientRegister'>
       <img src="../src/assets/logoPagina3.png" className='logoSize w-25 py-3' alt="" />
+      <h1 className='tituloRegister'>Registro</h1>
       <div className='row justify-content-center py-4'>
         <form className='form col-md-6 col-12 p-4 colorFormReg' onSubmit={handleSubmit}>
           <InputForm label='Nombre' name={'name'} type='text' id={'name'}handleChange={(event) => handleChange(event)}  />
