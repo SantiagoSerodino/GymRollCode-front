@@ -15,6 +15,7 @@ const AdminUsersPage = () => {
         name: '',
         lastName: '',
         email:'',
+        phoneNumber:'',
         contractedPlan: '',
         classes: '',                
     });
@@ -98,7 +99,8 @@ const AdminUsersPage = () => {
             _id : user._id,
             name : user.name,
             lastName : user.lastName,
-            email: user.email,
+            email : user.email,
+            phoneNumber : user.phoneNumber,
             contractedPlan: user.contractedPlan,
             classes: user.classes
         })
@@ -113,6 +115,7 @@ const AdminUsersPage = () => {
                     <ColumnComponent item={"Nombre"}/>
                     <ColumnComponent item={"Apellido"}/>
                     <ColumnComponent item={"Email"}/>
+                    <ColumnComponent item={"Numero de teléfono"}/>
                     <ColumnComponent item={"Plan Contratado"}/>
                     <ColumnComponent item={"Clase"}/>
                     <ColumnComponent item={"Acciones"}/>
@@ -125,8 +128,9 @@ const AdminUsersPage = () => {
                             <td>{user.name}</td>
                             <td>{user.lastName}</td>
                             <td>{user.email}</td>
+                            <td>{user.phoneNumber}</td>
                             <td>{user.contractedPlan? user.contractedPlan : [] }</td>
-                            <td>{`${user.classes?user.classes.name:[]} ${user.classes?user.classes.date:[]} ${user.classes?user.classes.hour:[]}`}</td>
+                            <td>{`${user.classes?user.classes.name.toUpperCase():[]} ${user.classes?user.classes.date:[]} ${user.classes?user.classes.hour:[]}`}</td>
                             <td>
                                 <button className='btn btn-primary' onClick={()=>{selectUser(user),toggleModal()}}><i className="bi bi-pencil-square"></i></button>
                                 <button className='btn btn-danger'onClick={()=>{selectUser(user),setModalDelete(true)}}><i className="bi bi-trash3"></i></button>
@@ -146,9 +150,11 @@ const AdminUsersPage = () => {
                     <label htmlFor="email">Correo Electronico</label>
                     <input className='form-control' type='text' name='email' id='email' readOnly value={userForm.email}/>
                     <label htmlFor="name">Nombre</label>
-                    <input className='form-control' type='text' name='name' id='name' onChange={handleChange} value={userForm.name}/>
+                    <input className='form-control' type='text' name='name' id='name' readOnly onChange={handleChange} value={userForm.name}/>
                     <label htmlFor="lastName">Apellido</label>
-                    <input className='form-control' type='text' name='lastName' id='lastName' onChange={handleChange} value={userForm.lastName}/>
+                    <input className='form-control' type='text' name='lastName' id='lastName' readOnly onChange={handleChange} value={userForm.lastName}/>
+                    <label htmlFor="phoneNumber">Numero de Telefono</label>
+                    <input className='form-control' type='number' name='lastName' id='phoneNumber' readOnly onChange={handleChange} value={userForm.phoneNumber}/>
                     <label htmlFor="contractedPlan">Plan Contratado</label>
                     <select className='form-control' name="contractedPlan" id="contractedPlan" value={userForm.contractedPlan?userForm.contractedPlan:''} onChange={handleChange}>
                         <option value="">Selecciona el tipo de plan</option>
