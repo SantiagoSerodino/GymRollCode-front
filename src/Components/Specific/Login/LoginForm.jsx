@@ -4,7 +4,7 @@ import axios from 'axios';
 import "../Login/styleLoginForm.css";
 import SubmitButton from '../../generals/LoginSubmitButton/SubmitButton';
 import LoginInputForm from '../../generals/LoginInputForm/LoginInputForm';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
@@ -28,7 +28,9 @@ const LoginForm = () => {
 
     axios.post('/login', loginForm)
     .then((response) => {
-      if (response.status !== 201) throw new Error("Hubo un error")
+      if (response.status !== 201) throw new Error("Hubo un error");
+      localStorage.setItem('user', response.data);
+      Navigate('/')
     })
     .catch((error) => console.log(error))
     .finally(() => alert('Inicio sesión con exito!'))

@@ -6,6 +6,7 @@ import Instructores from '../Components/Specific/Instructores/Instructores';
 import MarcasSponsor from '../Components/Specific/Marcas/MarcasSponsor';
 import IntroPagina from '../Components/Specific/IntroPagina/IntroPagina';
 import '../pages/StyleHomeScreen.css';
+import Comentarios from '../components/specific/CommentsZone/Comments';
 
 
 const HomePage = () => {
@@ -49,6 +50,7 @@ const HomePage = () => {
         <div className='profesoresMG'>
           <Instructores/>
           <PlanCard/>
+          <Comentarios/>
         </div>
 
       
