@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Comentarios() {
   const [comentarios, setComentarios] = useState([]);
   const [nuevoComentario, setNuevoComentario] = useState('');
-  const [comentariosVisibles, setComentariosVisibles] = useState(5); // Número inicial de comentarios a mostrar
+  const [comentariosVisibles, setComentariosVisibles] = useState(5);
   const [cargarMasComentarios, setCargarMasComentarios] = useState(true);
 
   const agregarComentario = () => {
@@ -11,11 +11,14 @@ function Comentarios() {
     setNuevoComentario('');
   };
 
-  const cargarMas = () => {
-    // Incrementa la cantidad de comentarios visibles
-    setComentariosVisibles(comentariosVisibles + 5);
+  const eliminarComentario = (index) => {
+    const nuevosComentarios = [...comentarios];
+    nuevosComentarios.splice(index, 1);
+    setComentarios(nuevosComentarios);
+  };
 
-    // Comprueba si se han cargado todos los comentarios
+  const cargarMas = () => {
+    setComentariosVisibles(comentariosVisibles + 5);
     if (comentariosVisibles >= comentarios.length) {
       setCargarMasComentarios(false);
     }
@@ -26,7 +29,15 @@ function Comentarios() {
       <h2>Comentarios</h2>
       <ul className="list-group">
         {comentarios.slice(0, comentariosVisibles).map((comentario, index) => (
-          <li key={index} className="list-group-item">{comentario}</li>
+          <li key={index} className="list-group-item">
+            {comentario}
+            <button
+              className="btn btn-danger btn-sm float-right"
+              onClick={() => eliminarComentario(index)}
+            >
+              Eliminar
+            </button>
+          </li>
         ))}
       </ul>
 
