@@ -18,7 +18,7 @@ const PlanCard = () => {
             <h2 className='py-3'>Plan Musculacion</h2>
             <p className='py-2'>Acceso a nuestras instalaciones basicas</p>
             <p className='py-3'>Precio : ${5000} por mes </p>
-            <a className=' btn btn-outline-success w-75 ' href='/clases'  >Accede a mas info del Plan
+            <a className=' btn btn-outline-success w-75 ' href='/musculacion'  >Accede a mas info del Plan
             </a>
           </div>
 
@@ -34,7 +34,7 @@ const PlanCard = () => {
             <h2 className='py-4'>Plan Full</h2>
             <p className='py-2'>Acceso ilimitado a todas nuestras instalaciones, clases grupales y entrenador personal</p>
             <p className='py-3'>Precio : ${10800} por mes </p>
-            <a className=' btn btn-outline-success w-75 ' href='/clases'  >Accede a mas info del Plan
+            <a className=' btn btn-outline-success w-75 ' href='/full'  >Accede a mas info del Plan
             </a>
           </div>
 
