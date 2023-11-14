@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Form from 'react-bootstrap/Form';
-import '../AutoEmail/StyleAutoEmail.css'
+import '../AutoEmail/StyleAutoEmail.css';
 
 const AutoEmail = () => {
 
@@ -71,7 +71,7 @@ const AutoEmail = () => {
                     <option>Selecciona el tipo de plan</option>
                     <option value="MUSCULACION">MUSCULACION</option>
                     <option value="CLASES">CLASES</option>
-                    <option value="CLASES">FULL</option>
+                    <option value="FULL">FULL</option>
                   </Form.Select>
                 </div>
               </div>
