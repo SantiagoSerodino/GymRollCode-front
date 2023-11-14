@@ -5,7 +5,7 @@ const About = () => {
 
     return (
     <>
-    <div className=' container-fluid bg-black'>
+    <div className=' container-fluid bg-black contenedorAboutMG '>
 
     {/* <!-- Parte superior con la imagen del grupo y la descripción --> */}
     <div className="container logoContainerMG">
