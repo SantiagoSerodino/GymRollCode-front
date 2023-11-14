@@ -63,3 +63,8 @@
         align-items: end;
     }
 }
+@media screen and (max-width:1080px) {
+    .navList li a{
+        font-size: 1.25rem;
+    }
+}

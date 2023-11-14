@@ -12,21 +12,28 @@ import AdminRouter from './pages/Admin/AdminRouter';
 import PlanMusculacion from './Components/generals/PlanCard/Planes/PlanMusculacion';
 import PlanClases from './Components/generals/PlanCard/Planes/PlanClases';
 import PlanFull from './Components/generals/PlanCard/Planes/PlanFull';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [user,setUser] = useState();
+
+  useEffect (()=>{
+    setUser(JSON.parse(localStorage.getItem('user')))
+  },[])
+
   return (
     
     <>
-      <BrowserRouter className="contenedorGeneral"> 
-      <Navbar/>
+      <BrowserRouter> 
+      <Navbar user={user}/>
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path='/register' element={<Register/>} />
-          <Route path='/login' element={<Login/>} />
+          <Route path='/login' element={<Login setUser={setUser}/>} />
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contactanos' element={<ContactUs/>} />
-          <Route path='/admin/*' element={<AdminRouter/>}/>
+          <Route path='/admin/*' element={<AdminRouter user={user}/>}/>
           <Route path='/musculacion' element={<PlanMusculacion/>} />
           <Route path='/clases' element={<PlanClases/>} />
           <Route path='/full' element={<PlanFull/>} />

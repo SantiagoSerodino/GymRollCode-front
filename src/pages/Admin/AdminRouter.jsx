@@ -5,12 +5,12 @@ import AdminUsersPage from './AdminUsers/AdminUsersPage';
 import AdminPage from './AdminPage';
 import styles from './AdminPage.module.css';
 
-const AdminRouter = () => {
+const AdminRouter = ({user}) => {
   return (
     <>
         <h2 className={styles.titulo}>Bienvenido Administrador</h2>
         <Routes>
-            <Route path='/users' element={<AdminUsersPage/>}/>
+            <Route path='/users' element={<AdminUsersPage user={user}/>}/>
             <Route path='/clases' element={<AdminClassesPage/>}/>
             <Route path='/' element={<AdminPage/>}/>
         </Routes>
