@@ -11,7 +11,7 @@ const Navbar = () => {
     const [showNav, setshowNav] = useState(true)
     const location= useLocation()
     useEffect(() => {
-        if(location.pathname === '/error'|| location.pathname === '/register'){
+        if(location.pathname === '/error'|| location.pathname === '/register'||location.pathname === '/login'){
         setshowNav(false)
         }else{
         setshowNav(true)
@@ -37,11 +37,11 @@ const Navbar = () => {
             <nav id="nav" className="nav">
             <button className='closeMenu' onClick={toggleFunctions}><i className="bi bi-x"></i></button>               
                 <ul className='navList'>
-                    <NavItem texto={"Inicio"}/>
-                    <NavItem texto={"Sobre Nosotros"}/>
-                    <NavItem texto={"Contáctanos"}/>
-                    <NavItem texto={"Iniciar Sesion"}/>
-                    <NavItem texto={"Registrarse"}/>
+                    <NavItem link={"/"} text={"Inicio"}/>
+                    <NavItem link={"/about"}text={"Nosotros"}/>
+                    <NavItem link={"/contactanos"}text={"Contáctanos"}/>
+                    <NavItem link={"/login"}text={"Iniciar Sesion"}/>
+                    <NavItem link={"/register"}text={"Registrarse"}/>
                 </ul>
             </nav>
         </div>

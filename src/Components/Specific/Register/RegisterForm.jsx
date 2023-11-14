@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import SubmitButton from '../../generals/SubmitButton/SubmitButton';
 import InputForm from '../../generals/InputForm/InputForm';
+import '../Register/StyleRegisterForm.css'
 
 const RegisterForm = () => {
   const [registerForm, setRegisterForm] = useState({
@@ -20,7 +22,7 @@ const RegisterForm = () => {
       [name]: value,
     }));
   };
-  console.log(registerForm);
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const nameRegex = /^[A-Za-z]{3,12}$/;
@@ -48,7 +50,6 @@ const RegisterForm = () => {
       return;
     }
 
-    petitionPost();
   };
 
   const petitionPost = async () => {
@@ -63,18 +64,21 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className='container-fluid'>
-      <div className='row justify-content-center mt-5'>
-        <form className='form col-4' onSubmit={handleSubmit}>
-        <InputForm label='Nombre' name={'name'} type='text' id={'name'}handleChange={(event) => handleChange(event)}  />
-            <InputForm label='Apellido' name={'lastName'} type='text' id={'lastName'} handleChange={(event) =>handleChange(event)} />
-            <InputForm label='Numero de Telefono' name={'phoneNumber'} type='number' id={'phoneNumber'} handleChange={(event) => handleChange(event)} />
-            <InputForm label='Email' name={'email'} type='email' id={'email'} handleChange={(event) => handleChange(event)} />
-            <InputForm label='Password' name={'password'} type='password' id={'password'} handleChange={(event) => handleChange(event)} />
-
+    <div className='container-fluid gradientRegister'>
+      <img src="../src/assets/logoPagina3.png" className='logoSize w-25 py-3' alt="" />
+      <div className='row justify-content-center py-4'>
+        <form className='form col-md-6 col-12 p-4 colorFormReg' onSubmit={handleSubmit}>
+          <InputForm label='Nombre' name={'name'} type='text' id={'name'}handleChange={(event) => handleChange(event)}  />
+          <InputForm label='Apellido' name={'lastName'} type='text' id={'lastName'} handleChange={(event) =>handleChange(event)} />
+          <InputForm label='Numero de Telefono' name={'phoneNumber'} type='number' id={'phoneNumber'} handleChange={(event) => handleChange(event)} />
+          <InputForm label='Email' name={'email'} type='email' id={'email'} handleChange={(event) => handleChange(event)} />
+          <InputForm label='Password' name={'password'} type='password' id={'password'} handleChange={(event) => handleChange(event)} />
+          <div className='btn btn-secondary py-1 '>
           <SubmitButton petition={petitionPost} contenText='Registrarse' />
+          </div>
         </form>
       </div>
+      <NavLink to='/' className='w-25 btn btn-outline-success p-1'>Home</NavLink>
     </div>
   );
 };
