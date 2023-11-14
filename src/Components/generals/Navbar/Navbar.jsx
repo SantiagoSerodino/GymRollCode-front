@@ -29,6 +29,7 @@ const Navbar = () => {
         toggleMenu();
     };
     
+    // const admin =localStorage.getItem(user.userWhitoutPassword.admin);
 
     return (
         <div className={`navDiv ${!showNav && 'd-none'}`}>
@@ -43,7 +44,7 @@ const Navbar = () => {
                     <NavItem link={"/contactanos"}text={"Contáctanos"}/>
                     <NavItem link={"/login"}text={"Iniciar Sesion"}/>
                     <NavItem link={"/register"}text={"Registrarse"}/>
-                    <NavItem link={"/admin"}text={"administración"}/>
+                    {/* {admin? <NavItem link={"/admin"}text={"administración"}/>:null} */}
 
                 </ul>
             </nav>
