@@ -4,9 +4,11 @@ import ColumnComponent from '../../../Components/generals/Table/ColumnComponent'
 import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const AdminUsersPage = () => {
+const AdminUsersPage = ({user}) => {
     //Direccion url de la Api
     const Url="https://gym-roll.onrender.com/user/";
+    //Instanciamos nuestro token del localStorage
+    const token = user?.logedUser?.token;
     //Seccion donde declaramos los estados
     const [userList,setUserList] = useState ([]);
     const [selectedOption, setSelectedOption] = useState('');
@@ -32,7 +34,10 @@ const AdminUsersPage = () => {
         const petitionGet = async ()=> {
             try {
                 //realiza la peticion GET a la base de datos
-                const response = await axios.get(Url);
+                const response = await axios.get(Url,
+                    {headers:{
+                        Authorization: `Bearer ${token}`
+                    }})
                 const data = response.data;
                 //Guarda la informacion de la api en nuestro estado
                 setUserList(data);
@@ -90,7 +95,6 @@ const AdminUsersPage = () => {
             ...userForm,
             [event.target.name]: event.target.value
         })
-        console.log(userForm);
     };
     
     //Función para seleccionar una clase y editarla y guarda los datos actuales en cada input

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SubmitButton from '../../generals/SubmitButton/SubmitButton';
 import InputForm from '../../generals/InputForm/InputForm';
 import '../Register/StyleRegisterForm.css'
 
 const RegisterForm = () => {
+  const navigate= useNavigate();
+
   const [registerForm, setRegisterForm] = useState({
     name: '',
     lastName: '',
@@ -55,11 +57,9 @@ const RegisterForm = () => {
 
   const petitionPost = async () => {
     try {
-      const response = await axios.post('https://gym-roll.onrender.com/user/register', registerForm);
-      console.log(response);
+      await axios.post('https://gym-roll.onrender.com/user/register', registerForm).then(navigate('/'))
       alert('Se ha registrado con éxito');
     } catch (error) {
-      console.error('Error al registrar', error);
       alert('Hubo un error al registrar. Por favor, inténtalo de nuevo.');
     }
   };
@@ -80,7 +80,7 @@ const RegisterForm = () => {
           </div>
         </form>
       </div>
-      <NavLink to='/' className='w-25 btn btn-outline-success p-1'>Home</NavLink>
+      <NavLink to='/' className='w-25 btn btn-outline-success'>Home</NavLink>
     </div>
   );
 };
