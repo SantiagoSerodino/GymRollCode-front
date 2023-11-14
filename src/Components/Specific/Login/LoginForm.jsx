@@ -7,7 +7,7 @@ import LoginInputForm from '../../generals/LoginInputForm/LoginInputForm';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 
-const LoginForm = () => {
+const LoginForm = ({setUser}) => {
 
   const navigate = useNavigate()
 
@@ -32,8 +32,10 @@ const LoginForm = () => {
 
   const petitionPost = async() =>{
     try{
-      const response = await  axios.post('https://gym-roll.onrender.com/user/login', loginForm).then(navigate('/'))
-      localStorage.setItem('user',JSON.stringify(response.data))
+      const response = await  axios.post('https://gym-roll.onrender.com/user/login', loginForm)
+      .then(navigate('/'))
+      localStorage.setItem('user',JSON.stringify(response.data));
+      setUser(response.data);
     }catch(error){
       console.log(error.message);
     }
@@ -54,10 +56,12 @@ const LoginForm = () => {
           <LoginInputForm label='Email' name='email' type='email' id={'email'} handleChange={(event) => handleChange(event)} />
           <LoginInputForm label='Contraseña' name='password' type='password' id={'password'}handleChange={(event) => handleChange(event)} />
           <SubmitButton Text='Inicia Sesion' petition={handleChange}/>
-        </form>
-
-        <div className="text-center mt-4">
+        <div className="text-center mb-3">
           <p className="d-inline-block text-light">¿No tienes una cuenta?</p> <NavLink to='/register' className="text-light fw-bold d-inline-flex" >CREA UNA AHORA!</NavLink>
+        </div>
+        </form>
+        <div>
+          <NavLink to='/' className='w-25 btn btn-outline-success p-1 mt-3'>Home</NavLink>
         </div>
 
       </div>
