@@ -26,7 +26,7 @@ const AutoEmail = () => {
 
 
         <div className="container ">
-          <div className="container my-5 py-3 col-12 col-md-6 contenedorAutoEmailMG">
+          <div className="container my-5 py-3 col-12  contenedorAutoEmailMG">
           <div className="row justify-content-between">
             <h1 className="col-12 py-3">Consulta por tus planes</h1>
             <form className="formularioMG" ref={form} onSubmit={sendEmail}>
