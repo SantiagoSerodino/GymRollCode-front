@@ -33,7 +33,7 @@ function App() {
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contactanos' element={<ContactUs/>} />
-          <Route path='/admin/*' element={<AdminRouter/>}/>
+          <Route path='/admin/*' element={<AdminRouter user={user}/>}/>
           <Route path='/musculacion' element={<PlanMusculacion/>} />
           <Route path='/clases' element={<PlanClases/>} />
           <Route path='/full' element={<PlanFull/>} />
