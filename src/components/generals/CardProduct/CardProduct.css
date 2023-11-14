@@ -11,3 +11,14 @@
 .card-product .card-img img{
   max-height: 150px;
 }
+
+.bg-color-item{
+  background-color: var(--color-5-mas-claro) !important
+}
+
+.bg-modal-body{
+  background-color: #626262 !important;
+}
+
+
+
