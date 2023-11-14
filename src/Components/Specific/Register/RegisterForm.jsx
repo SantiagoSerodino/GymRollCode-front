@@ -22,7 +22,7 @@ const RegisterForm = () => {
       [name]: value,
     }));
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const nameRegex = /^[A-Za-z]{3,12}$/;
@@ -50,6 +50,7 @@ const RegisterForm = () => {
       return;
     }
 
+    petitionPost();
   };
 
   const petitionPost = async () => {
@@ -74,7 +75,7 @@ const RegisterForm = () => {
           <InputForm label='Email' name={'email'} type='email' id={'email'} handleChange={(event) => handleChange(event)} />
           <InputForm label='Password' name={'password'} type='password' id={'password'} handleChange={(event) => handleChange(event)} />
           <div className='btn btn-secondary py-1 '>
-          <SubmitButton petition={petitionPost} contenText='Registrarse' />
+          <SubmitButton petition={handleSubmit} contenText='Registrarse' />
           </div>
         </form>
       </div>
