@@ -61,7 +61,7 @@ const Navbar = ({user}) => {
             <nav id="nav" className="nav">
             <button className='closeMenu' onClick={toggleFunctions}><i className="bi bi-x"></i></button>               
                 <ul className='navList'>
-                    <NavItem link={"/"} text={"Pagina Principal"}/>
+                    <NavItem link={"/"} text={"Inicio"}/>
                     <NavItem link={"/about"}text={"Nosotros"}/>
                     <NavItem link={"/contactanos"}text={"Contáctanos"}/>
                     {!user && <NavItem link={"/login"} text={"Iniciar Sesión"} />}

@@ -43,7 +43,7 @@ const LoginForm = ({setUser}) => {
   }
   return (
 
-    <div className='container-fluid  gradient'>
+    <div className='container-fluid  gradient py-4'>
 
       <div className='row justify-content-center'>
 
