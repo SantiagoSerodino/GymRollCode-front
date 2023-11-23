@@ -1,7 +1,7 @@
 #root {
-  /* max-width: 1280px; */
+
   margin: 0 auto;
-  /* padding: 2rem; */
+
   text-align: center;
   
   --color-1: #FFFFFF;
@@ -35,5 +35,6 @@ body{
   height: 100vh;
 }
 .contenedorGeneral{
-  overflow: hidden;
+  overflow-x: hidden;
+  
 }

@@ -3,7 +3,9 @@ import RegisterForm from '../Components/Specific/Register/RegisterForm';
 
 const Register = () => {
   return (
+    <>
     <RegisterForm/>
+    </>
   )
 }
 

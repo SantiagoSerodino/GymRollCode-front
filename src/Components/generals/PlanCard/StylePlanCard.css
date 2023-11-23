@@ -26,25 +26,10 @@
   --color-5-más-claro: #02F8C4;
 }
 
- /* .planes {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-} */
 .plan-card h1 {
   color: var(--color-5-más-claro);
 }
-
- .plan-musculacion {
-  background-color: var(--color-2-más-claro) ;
-  color: var(--color-5-más-oscuro);
-  border-radius: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ddd; 
-  margin-bottom: 20px;
-} 
-
- .plan-clases{
+ .planGym{
   background-color: var(--color-2-más-claro);
   color: var(--color-5-más-oscuro);
   border-radius: 20px;
@@ -53,33 +38,10 @@
   margin-bottom: 20px;
 } 
 
- .plan-full {
-  background-color: var(--color-2-más-claro);
-  color: var(--color-5-más-oscuro);
-  border-radius: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ddd; 
-  margin-bottom: 20px;
+
+@media (max-width: 768px) {
+  .planGym {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 } 
-
-/* @media (max-width: 768px) {
-  .planes {
-    flex-direction: column;
-  }
-
-  .plan-musculacion {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-
-  .plan-clases {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .plan-full {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-}  */
