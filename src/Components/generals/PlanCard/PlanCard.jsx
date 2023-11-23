@@ -1,8 +1,5 @@
 import React from 'react';
-import PlanMusculacion from '../PlanCard/Planes/PlanMusculacion';
-import PlanClases from '../PlanCard/Planes/PlanClases';
-import PlanFull from '../PlanCard/Planes/PlanFull';
-import '../PlanCard/StylePlanCard.css'
+import '../PlanCard/StylePlanCard.css';
 
 
 

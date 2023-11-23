@@ -66,7 +66,7 @@ const LoginForm = ({setUser}) => {
               
           <LoginInputForm label='Email' name='email' type='email' id={'email'} handleChange={(event) => handleChange(event)} />
           <LoginInputForm label='Contraseña' name='password' type='password' id={'password'}handleChange={(event) => handleChange(event)} />
-          <SubmitButton Text='Inicia Sesion' petition={handleChange}/>
+          <SubmitButton Text='Inicia Sesion' petition={handleSubmit}/>
         <div className="text-center mb-3">
           <p className="d-inline-block text-light">¿No tienes una cuenta?</p> <NavLink to='/register' className="text-light fw-bold d-inline-flex" >CREA UNA AHORA!</NavLink>
         </div>
@@ -76,9 +76,10 @@ const LoginForm = ({setUser}) => {
         </div>
       </div>
 
-      <Modal size='sm' isOpen={modalIsOpen} style={{marginTop:'10%',borderColor: 'none'}}>
-        <ModalHeader className='bg-black d-block text-white'>
+      <Modal size='sm' isOpen={modalIsOpen} style={{marginTop:'10%',border:'3px solid #00F0A0',borderRadius:'15px'}}>
+        <ModalHeader className='bg-black d-inline-block text-white'>
           <span onClick={changeModal} style={{float:'right',cursor: "pointer"}}>X</span>
+          <p>Error</p>
         </ModalHeader>
         <ModalBody className='bg-black text-white'>
           <p>Credenciales Inválidas</p>
