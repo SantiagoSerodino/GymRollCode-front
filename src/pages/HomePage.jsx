@@ -2,6 +2,7 @@ import React from 'react';
 import PlanCard from '../Components/generals/PlanCard/PlanCard';
 import CardProduct from '../components/generals/CardProduct/CardProduct';
 import Clima from '../Components/Specific/Clima/Clima'
+
 import Instructores from '../Components/Specific/Instructores/Instructores';
 import MarcasSponsor from '../Components/Specific/Marcas/MarcasSponsor';
 import IntroPagina from '../Components/Specific/IntroPagina/IntroPagina';
