@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../footer/styleFooter.css'
+import logoFooter from '../../../assets/logoPagina3.png'
 
 
 
@@ -21,7 +22,7 @@ const Footer = () => {
             <footer className={`py-2 footerMG  container-fluid ${!showFooter && 'd-none'}`}>
                 <div className='row align-items-end justify-content-between border-bottom'>
                     <div className='col-md-4 col-lg-2 pb-2 px-3 px-md-2  logoFooterMG'>
-                        <img className=' imgLogoFooter ' src='../src/assets/logoPagina3.png' alt='logo de pagina' />
+                        <img className='imgLogoFooter' src={logoFooter} alt='logo de pagina' />
                     </div>
                     <ul className='textoFooterMG my-2 col-md-4 justify-content-evenly list-unstyled d-flex' >
                         <li className=' py-2  col-md-4 text-center'><a href='/' className=' nav-link text-white mx-2'>Inicio</a></li>
