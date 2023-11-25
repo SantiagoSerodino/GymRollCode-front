@@ -27,6 +27,7 @@ const Clima = () => {
         humedad: clima.main.humidity,
         status: clima.weather[0].description,
         icon: clima.weather[0].main,
+        
     });
     } catch (error) {
         console.log(error);
