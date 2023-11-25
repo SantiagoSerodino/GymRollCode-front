@@ -27,6 +27,7 @@ const Clima = () => {
         humedad: clima.main.humidity,
         status: clima.weather[0].description,
         icon: clima.weather[0].main,
+        
     });
     } catch (error) {
         console.log(error);
@@ -41,7 +42,7 @@ const Clima = () => {
     return (
         <>
         <div className='container card cardMG bg-dark-subtle' >
-            <img className='icon' src={iconoClima(climaData.iconPath)} alt='icono del clima' />  
+            <img className='icon' src={iconoClima(climaData.icon)} alt='icono del clima' />  
             <div className='card-body'>
                 <h5 className='cityNameMG text-uppercase'> {climaData.city} </h5>
             </div>

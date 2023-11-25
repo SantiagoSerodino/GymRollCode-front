@@ -20,7 +20,7 @@ const iconoClima = (icon) => {
                 iconPath='../src/assets/icon/iconClima/clear-day.svg'
                 break;
             case 'Atmosphere':
-                iconPath='../src/assets/icon/iconClima/weather.svg'
+                iconPath='../src/assets/icon/iconClima/fog.svg'
                 break;  
             case 'Clouds':
                 iconPath='../src/assets/icon/iconClima/fog.svg'
