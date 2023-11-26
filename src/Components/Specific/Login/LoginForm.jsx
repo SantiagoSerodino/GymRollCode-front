@@ -4,7 +4,8 @@ import axios from 'axios';
 import "../Login/styleLoginForm.css";
 import SubmitButton from '../../generals/LoginSubmitButton/SubmitButton';
 import LoginInputForm from '../../generals/LoginInputForm/LoginInputForm';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate} from 'react-router-dom';
+import logoLogin from '../../../assets/logoPagina3.png'
 
 
 const LoginForm = ({setUser}) => {
@@ -51,7 +52,7 @@ const LoginForm = ({setUser}) => {
 
         <form className='form col-12 col-sm-6 col-lg-4 colorForm' onSubmit={handleSubmit} >
 
-          <img className='logoSize mt-3 mb-3' src='src/assets/logoPagina3.png' alt='logo' />
+          <img className='logoSize mt-3 mb-3' src={logoLogin} alt='logo' />
               
           <LoginInputForm label='Email' name='email' type='email' id={'email'} handleChange={(event) => handleChange(event)} />
           <LoginInputForm label='Contraseña' name='password' type='password' id={'password'}handleChange={(event) => handleChange(event)} />

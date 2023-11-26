@@ -30,7 +30,7 @@ const iconoClima = (icon) => {
                 iconPath = imgenSnow
                 break;  
             case 'Clouds':
-                iconPath=imgenfog
+                iconPath = imgenfog
                 break;  
             case 'Fog':
                 iconPath = imgenfog
