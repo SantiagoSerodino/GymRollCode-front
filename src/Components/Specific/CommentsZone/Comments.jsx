@@ -27,7 +27,7 @@ function CommentSection() {
 
     return (
     <div>
-        <h2 className='fw-bold text-decoration-underline text-success fs-2'>Comentarios</h2>
+        <h2 className='fw-bold text-decoration-underline text-success fs-1 pb-4'>Comentarios</h2>
         <div className="mb-3">
         <textarea
           className="form-control"
