@@ -1,41 +1,48 @@
 import React from 'react'
+import imgenThunderstorms from '../../../assets/icon/iconClima/thunderstorms-rain.svg'
+import imgenfog from '../../../assets/icon/iconClima/fog.svg'
+import imgenClearDay from '../../../assets/icon/iconClima/clear-day.svg'
+import imgenrain from '../../../assets/icon/iconClima/rain.svg'
+import imgenSnow from '../../../assets/icon/iconClima/snow.svg'
+import imgenHaze from '../../../assets/icon/iconClima/haze.svg'
+import imgenSmoke from '../../../assets/icon/iconClima/smoke.svg'
 
 const iconoClima = (icon) => {
     let iconPath ='';
     
         switch (icon) {
             case 'Thunderstorm':
-                iconPath='../src/assets/icon/iconClima/thunderstorms-rain.svg'
+                iconPath = imgenThunderstorms
                 break;    
             case 'Drizzle':
-                iconPath='../src/assets/icon/iconClima/clear-day.svg'
+                iconPath = imgenClearDay
                 break;
             case 'Rain':
-                iconPath='../src/assets/icon/iconClima/rain.svg'
+                iconPath = imgenrain
                 break;
             case 'Snow':
-                iconPath='../src/assets/icon/iconClima/snowy.svg'
+                iconPath = imgenSnowy
                 break;                        
             case 'Clear':
-                iconPath='../src/assets/icon/iconClima/clear-day.svg'
+                iconPath = imgenClearDay
                 break;
             case 'Atmosphere':
-                iconPath='../src/assets/icon/iconClima/fog.svg'
+                iconPath = imgenSnow
                 break;  
             case 'Clouds':
-                iconPath='../src/assets/icon/iconClima/fog.svg'
+                iconPath=imgenfog
                 break;  
             case 'Fog':
-                iconPath='../src/assets/icon/iconClima/fog.svg'
+                iconPath = imgenfog
                 break;    
             case 'Haze':
-                iconPath='../src/assets/icon/iconClima/haze.svg'
+                iconPath = imgenHaze
                 break;   
             case 'Smoke':
-                iconPath='../src/assets/icon/iconClima/smoke.svg'
+                iconPath = imgenSmoke
                 break;      
             default:
-                iconPath='../src/assets/icon/iconClima/clear-day.svg'
+                iconPath = imgenClearDay
         }
         return iconPath
 

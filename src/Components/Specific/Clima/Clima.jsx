@@ -3,6 +3,7 @@ import axios from 'axios';
 import iconoClima from './iconoClima';
 import '../Clima/StyleClima.css';
 
+
 const Clima = () => {
     const URLBASE = 'https://api.openweathermap.org/data/2.5/weather';
     const APIKEY = '856cf4ee8279fe08b25156fb7c011884';
@@ -18,31 +19,33 @@ const Clima = () => {
 
     async function getClima() {
     try {
-    const response = await axios.get(URL);
-    const clima = response.data;
-
-    setClimaData({
+        const response = await axios.get(URL);
+        const clima = response.data;
+        
+        setClimaData({
         city: clima.name,
         temperature: clima.main.temp,
         humedad: clima.main.humidity,
         status: clima.weather[0].description,
         icon: clima.weather[0].main,
         
+        
     });
-    } catch (error) {
-        console.log(error);
-    }
-    }
-    useEffect(() => {
+} catch (error) {
+    console.log(error);
+}
+}
+useEffect(() => {
     getClima();
-    }, []);
-    
+}, []);
+
+
 
 
     return (
         <>
         <div className='container card cardMG bg-dark-subtle' >
-            <img className='icon' src={iconoClima(climaData.icon)} alt='icono del clima' />  
+            <img className='icon' src={iconoClima(climaData.icon)} alt='icono del clima' /> 
             <div className='card-body'>
                 <h5 className='cityNameMG text-uppercase'> {climaData.city} </h5>
             </div>
