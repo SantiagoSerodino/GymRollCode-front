@@ -10,11 +10,11 @@ import imagen5 from '../../assets/about-img/miembro4.jpg';
 
 
 const teamMembers = [
-    { id: 1, name: 'Natalia Aguirre', image: imagen1 },
-    { id: 2, name: 'Mauro Gutierrez', image: imagen2 },
-    { id: 3, name: 'Franco Margagliotti', image: imagen3 },
-    { id: 4, name: 'Santiago Serodino', image: imagen4 },
-    { id: 5, name: 'Leandro Cudmani', image: imagen5 },
+    { id: 1, name: 'Natalia Aguirre', image: imagen1 , linkedin: 'https://www.linkedin.com/', github: 'https://github.com/Naty1324'},
+    { id: 2, name: 'Mauro Gutierrez', image: imagen2 , linkedin: 'https://www.linkedin.com/in/mauro-gutierrez-8775282a0/', github: 'https://github.com/MauroGutierrez53' },
+    { id: 3, name: 'Franco Margagliotti', image: imagen3 , linkedin: 'https://www.linkedin.com/' ,github: 'https://github.com/FrancoMarga' },
+    { id: 4, name: 'Santiago Serodino', image: imagen4 , linkedin: 'https://www.linkedin.com/' ,github: 'https://github.com/santi0dino' },
+    { id: 5, name: 'Leandro Cudmani', image: imagen5 , linkedin: 'https://www.linkedin.com/' ,github: 'https://github.com/LeanCud'},
 ];
 
 const About = () => {
@@ -60,15 +60,13 @@ const About = () => {
                     <img src={member.image} alt={member.name} className='p-3 imgPersonaMG' />
                     <div className='imgPersonajeMG px-3 pb-5 w-100 '>
                         <h2 className='textMienbroMG '>{member.name}</h2>
+                        <a className='py-1 px-3 text-success' href={member.linkedin}><i className="bi bi-linkedin fs-2"></i></a>
+                        <a className='py-1 px-3 text-success' href={member.github}><i className="bi bi-github fs-2"></i></a>
                     </div>
                 </article>
             ))}
             </div>
         </div>
-
-
-
-
     </div>
     </>
     )

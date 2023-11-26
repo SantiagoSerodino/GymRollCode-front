@@ -13,6 +13,7 @@ import remeraHombre from '../assets/imagesCards/remera-hombre.jpg';
 import proteinaHombre from '../assets/imagesCards/proteina-hombre.jpg';
 import proteinaMujer from '../assets/imagesCards/proteina-mujer.jpg';
 import combo from '../assets/imagesCards/combo.jpg';
+import CommentSection from '../Components/Specific/CommentsZone/Comments';
 
 const HomePage = () => {
   return (
@@ -55,6 +56,7 @@ const HomePage = () => {
           <div className='profesoresMG'>
             <Instructores />
             <PlanCard />
+            <CommentSection/>
           </div>
         </div>
       </div>
