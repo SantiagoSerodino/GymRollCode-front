@@ -26,6 +26,16 @@
   --color-5-más-claro: #02F8C4;
 }
 .contenedorPlanes{
-margin: auto;
+margin: 0;
+background-color: var(--color-2-más-oscuro);
+}
+.cardContenedora{
+  color: var(--color-5-más-oscuro);
+  background-color: var(--color-3-más-claro);
+}
+.bordeCrad {
+  border-radius: 15px;
+  border: 1px solid black;
+  overflow: hidden;
 }
 

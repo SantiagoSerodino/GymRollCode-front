@@ -1,41 +1,51 @@
 import React from 'react'
+import imgenThunderstorms from '../../../assets/icon/iconClima/thunderstorms-rain.svg'
+import imgenfog from '../../../assets/icon/iconClima/fog.svg'
+import imgenClearDay from '../../../assets/icon/iconClima/clear-day.svg'
+import imgenrain from '../../../assets/icon/iconClima/rain.svg'
+import imgenSnow from '../../../assets/icon/iconClima/snow.svg'
+import imgenHaze from '../../../assets/icon/iconClima/haze.svg'
+import imgenSmoke from '../../../assets/icon/iconClima/smoke.svg'
 
 const iconoClima = (icon) => {
-    switch (icon) {
-        case 'Thunderstorm':
-            icon='./src/assets/icon/iconClima/thunderstorms-rain.svg'
-            break;    
-        case 'Drizzle':
-            icon='./src/assets/icon/iconClima/clear-day.svg'
-            break;
-        case 'Rain':
-            icon='./src/assets/icon/iconClima/rain.svg'
-            break;
-        case 'Snow':
-            icon='./src/assets/icon/iconClima/snowy.svg'
-            break;                        
-        case 'Clear':
-            icon='./src/assets/icon/iconClima/clear-day.svg'
-            break;
-        case 'Atmosphere':
-            icon='./src/assets/icon/iconClima/weather.svg'
-            break;  
-        case 'Clouds':
-            icon='./src/assets/icon/iconClima/fog.svg'
-            break;  
-        case 'Fog':
-            icon='./src/assets/icon/iconClima/fog.svg'
-            break;    
-        case 'Haze':
-            icon='./src/assets/icon/iconClima/haze.svg'
-            break;   
-        case 'Smoke':
-            icon='./src/assets/icon/iconClima/smoke.svg'
-            break;      
-        default:
-            icon='./src/assets/icon/iconClima/clear-day.svg'
-    }
-    return icon
+    let iconPath ='';
+    
+        switch (icon) {
+            case 'Thunderstorm':
+                iconPath = imgenThunderstorms
+                break;    
+            case 'Drizzle':
+                iconPath = imgenClearDay
+                break;
+            case 'Rain':
+                iconPath = imgenrain
+                break;
+            case 'Snow':
+                iconPath = imgenSnowy
+                break;                        
+            case 'Clear':
+                iconPath = imgenClearDay
+                break;
+            case 'Atmosphere':
+                iconPath = imgenSnow
+                break;  
+            case 'Clouds':
+                iconPath = imgenfog
+                break;  
+            case 'Fog':
+                iconPath = imgenfog
+                break;    
+            case 'Haze':
+                iconPath = imgenHaze
+                break;   
+            case 'Smoke':
+                iconPath = imgenSmoke
+                break;      
+            default:
+                iconPath = imgenClearDay
+        }
+        return iconPath
+
 
 }
 
