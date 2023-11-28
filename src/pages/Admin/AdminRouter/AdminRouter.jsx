@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import AdminClassesPage from './AdminClasses/AdminClassesPage';
-import AdminUsersPage from './AdminUsers/AdminUsersPage';
-import AdminPage from './AdminPage';
-import styles from './AdminPage.module.css';
+import AdminClassesPage from '../AdminClasses/AdminClassesPage';
+import AdminUsersPage from '../AdminUsers/AdminUsersPage';
+import AdminPage from '../AdminPage/AdminPage';
+import styles from '../AdminPage/AdminPage.module.css';
 
 const AdminRouter = ({user}) => {
   return (

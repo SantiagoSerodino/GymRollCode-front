@@ -136,8 +136,11 @@ const AdminUsersPage = ({user}) => {
                             <td>{user.contractedPlan? user.contractedPlan : [] }</td>
                             <td>{`${user.classes?user.classes.name.toUpperCase():[]} ${user.classes?user.classes.date:[]} ${user.classes?user.classes.hour:[]}`}</td>
                             <td>
-                                <button className='btn btn-primary' onClick={()=>{selectUser(user),toggleModal()}}><i className="bi bi-pencil-square"></i></button>
-                                <button className='btn btn-danger'onClick={()=>{selectUser(user),setModalDelete(true)}}><i className="bi bi-trash3"></i></button>
+                                {!user.admin&& 
+                                <>
+                                    <button className='btn btn-primary' onClick={()=>{selectUser(user),toggleModal()}}><i className="bi bi-pencil-square"></i></button>
+                                    <button className='btn btn-danger'onClick={()=>{selectUser(user),setModalDelete(true)}}><i className="bi bi-trash3"></i></button>
+                                </>}  
                             </td>
                         </tr>
                     )
@@ -158,7 +161,7 @@ const AdminUsersPage = ({user}) => {
                     <label htmlFor="lastName">Apellido</label>
                     <input className='form-control' type='text' name='lastName' id='lastName' readOnly onChange={handleChange} value={userForm.lastName}/>
                     <label htmlFor="phoneNumber">Numero de Telefono</label>
-                    <input className='form-control' type='number' name='lastName' id='phoneNumber' readOnly onChange={handleChange} value={userForm.phoneNumber}/>
+                    <input className='form-control' type='number' name='phoneNumber' id='phoneNumber' onChange={handleChange} value={userForm.phoneNumber}/>
                     <label htmlFor="contractedPlan">Plan Contratado</label>
                     <select className='form-control' name="contractedPlan" id="contractedPlan" value={userForm.contractedPlan?userForm.contractedPlan:''} onChange={handleChange}>
                         <option value="">Selecciona el tipo de plan</option>

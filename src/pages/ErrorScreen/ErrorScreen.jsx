@@ -18,8 +18,11 @@ const ErrorScreen = () => {
                   </div>
                   <div className='text-center pb-2'>
                      <h1 className=' text-uppercase fs-4 p-4'>No se pudo conectar</h1>
-                     <Link to='/' className='btn text-light bg-dark my-2'>
-                        Inicio
+                     <Link to='javascript:history.back()' className='btn text-light bg-dark my-2' style={{ marginRight: '10px' }}>
+                        VOLVER ATRAS
+                     </Link>
+                     <Link to='/' className='btn text-light bg-dark my-2 '>
+                        INICIO
                      </Link>
                   </div>
                   <div className='container text-center pt-2'>

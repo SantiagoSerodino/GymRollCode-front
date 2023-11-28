@@ -8,7 +8,7 @@ import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Login from './pages/Login'
 import './App.css';
-import AdminRouter from './pages/Admin/AdminRouter';
+import AdminRouter from './pages/Admin/AdminRouter/AdminRouter';
 import PlanMusculacion from './Components/generals/PlanCard/Planes/PlanMusculacion';
 import PlanClases from './Components/generals/PlanCard/Planes/PlanClases';
 import PlanFull from './Components/generals/PlanCard/Planes/PlanFull';
