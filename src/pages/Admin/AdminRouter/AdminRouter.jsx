@@ -8,12 +8,12 @@ import styles from '../AdminPage/AdminPage.module.css';
 const AdminRouter = ({user}) => {
   return (
     <>
-        <h2 className={styles.titulo}>Bienvenido Administrador</h2>
-        <Routes>
-            <Route path='/users' element={<AdminUsersPage user={user}/>}/>
-            <Route path='/clases' element={<AdminClassesPage/>}/>
-            <Route path='/' element={<AdminPage/>}/>
-        </Routes>
+      <h2 className={styles.Titulo}>Bienvenido Administrador</h2>
+      <Routes>
+          <Route path='/users' element={<AdminUsersPage user={user}/>}/>
+          <Route path='/clases' element={<AdminClassesPage/>}/>
+          <Route path='/' element={<AdminPage/>}/>
+      </Routes>
     </>
   );
 };

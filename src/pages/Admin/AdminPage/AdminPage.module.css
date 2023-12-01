@@ -1,16 +1,23 @@
+.body{
+    overflow-x: none;
+}
 .ImgSection{
-    display: flex;
-    justify-content: space-around;
     margin-top: 5%;
-    margin-bottom: 5%;
+    align-content: center;
+    margin-bottom: 10%;
 }
-.titulo{
+.Titulo{
     color: white;
-    -webkit-text-stroke: 2px rgba(95, 158, 160, 0.673); 
+    -webkit-text-stroke: 2px rgba(95, 158, 160, 0.673);
+    text-align: center;
 }
+
 .CardImg{
+    width: 400px;
+    height: 300px;
     margin-top: 2rem;
-    border: 3px solid cadetblue;    
+    border: 3px solid cadetblue;  
+
 }
 
 .CardImg:hover{
