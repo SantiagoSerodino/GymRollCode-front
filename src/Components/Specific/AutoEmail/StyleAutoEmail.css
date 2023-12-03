@@ -45,3 +45,7 @@
     color: var(--color-5-más-claro);
     border-radius: 25px;
 }
+.modalEmailMG{
+    background-color:var(--color-3-más-oscuro);
+    color: var(--color-5);
+}

@@ -28,6 +28,7 @@
 .colorFormReg {
     background-color: #000000;
     border-radius: 20px;
+    overflow-y: hidden;
 }
 .tituloRegister{
     font-size: 3rem;
@@ -37,11 +38,12 @@
 
 .gradientRegister {
 	width: 100vw;
-    height: 100vh;
+    height: 100%;
 	background: linear-gradient(334deg, #01F8B4, #000000, #f7137e);
 	background-size: 180% 180%;
 	animation: gradient-animation 6s ease infinite;
     color: var(--color-1-más-oscuro);
+    
 }
 .botonRegistrer{
     color: #00F0A0;
@@ -49,8 +51,14 @@
 @media only screen and (min-width: 900px) {
     .gradientRegister {
         width: 100vw;
-        height: 100%;
+        height: 100vh;
     }
 }
+/* @media only screen and (min-width: 1024px) {
+    .gradientRegister {
+        width: 100vw;
+        height: 100vh;
+    }
+} */
 
 

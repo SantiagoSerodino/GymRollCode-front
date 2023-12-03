@@ -116,6 +116,7 @@ const AdminClassesPage = () => {
 
   return (
     <>
+    
         {/* Boton para agregar clases */}
         <br/>
         <button className="btn btn-success" onClick={()=>{setClassForm(null),setModalType('crear'),toggleModal()}}>Agregar Clase</button>
