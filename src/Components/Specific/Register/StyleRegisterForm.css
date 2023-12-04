@@ -37,7 +37,7 @@
 }
 
 .gradientRegister {
-	width: 100vw;
+    margin: 0;
     height: 100%;
 	background: linear-gradient(334deg, #01F8B4, #000000, #f7137e);
 	background-size: 180% 180%;
@@ -48,17 +48,17 @@
 .botonRegistrer{
     color: #00F0A0;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1900px) {
     .gradientRegister {
-        width: 100vw;
         height: 100vh;
     }
 }
-/* @media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 800px) {
     .gradientRegister {
-        width: 100vw;
         height: 100vh;
     }
-} */
+}
+
+
 
 
