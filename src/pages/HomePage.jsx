@@ -5,6 +5,7 @@ import Clima from '../Components/Specific/Clima/Clima';
 import Instructores from '../Components/Specific/Instructores/Instructores';
 import MarcasSponsor from '../Components/Specific/Marcas/MarcasSponsor';
 import IntroPagina from '../Components/Specific/IntroPagina/IntroPagina';
+import CommentSection from '../Components/Specific/CommentsZone/Comments';
 import '../pages/StyleHomeScreen.css';
 // imagenes
 import botella from '../assets/imagesCards/botella-termica.jpg';
@@ -13,7 +14,6 @@ import remeraHombre from '../assets/imagesCards/remera-hombre.jpg';
 import proteinaHombre from '../assets/imagesCards/proteina-hombre.jpg';
 import proteinaMujer from '../assets/imagesCards/proteina-mujer.jpg';
 import combo from '../assets/imagesCards/combo.jpg';
-import CommentSection from '../Components/Specific/CommentsZone/Comments';
 
 const HomePage = () => {
   return (

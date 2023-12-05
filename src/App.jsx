@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Register from './pages/Register';
 import ErrorScreen from './pages/ErrorScreen/ErrorScreen';
@@ -8,7 +8,7 @@ import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Login from './pages/Login'
 import './App.css';
-import AdminRouter from './pages/Admin/AdminRouter';
+import AdminRouter from './pages/Admin/AdminRouter/AdminRouter';
 import PlanMusculacion from './Components/generals/PlanCard/Planes/PlanMusculacion';
 import PlanClases from './Components/generals/PlanCard/Planes/PlanClases';
 import PlanFull from './Components/generals/PlanCard/Planes/PlanFull';
@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [user,setUser] = useState();
+    const admin = user?.logedUser?.userWhitoutPassword?.admin;
 
   useEffect (()=>{
     setUser(JSON.parse(localStorage.getItem('user')))
@@ -33,7 +34,7 @@ function App() {
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contactanos' element={<ContactUs/>} />
-          <Route path='/admin/*' element={<AdminRouter user={user}/>}/>
+          <Route path='/admin/*' element={admin? <AdminRouter user={user}/> : <Navigate to="/error" replace />}/>
           <Route path='/musculacion' element={<PlanMusculacion/>} />
           <Route path='/clases' element={<PlanClases/>} />
           <Route path='/full' element={<PlanFull/>} />

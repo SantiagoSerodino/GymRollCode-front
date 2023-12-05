@@ -57,7 +57,7 @@ const RegisterForm = () => {
 
   const petitionPost = async () => {
     try {
-      await axios.post('https://gym-roll.onrender.com/user/register', registerForm).then(navigate('/'))
+      await axios.post('https://gym-roll.onrender.com/user/register', registerForm).then(navigate('/login'))
       alert('Se ha registrado con éxito');
     } catch (error) {
       alert('Hubo un error al registrar. Por favor, inténtalo de nuevo.');

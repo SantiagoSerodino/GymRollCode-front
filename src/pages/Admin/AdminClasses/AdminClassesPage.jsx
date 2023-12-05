@@ -165,7 +165,13 @@ const AdminClassesPage = () => {
                     <input className='form-control' type='text' name='name' id='name' readOnly={modalType=='actualizar'} onChange={handleChange} value={ClassForm?ClassForm.name : '' }/>
                     <br/>
                     <label htmlFor="date">Fecha:</label>
-                    <input className='form-control' type='text' name='date' id='date' onChange={handleChange} value={ClassForm? ClassForm.date : ''}/>
+                    <select className='form-control' name='date' id='date' onChange={handleChange} value={ClassForm? ClassForm.date : ''}>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miercoles">Miercoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                    </select>
                     <br/>
                     <label htmlFor="hour">Hora:</label>
                     <input className='form-control' type='text' name='hour' id='hour' onChange={handleChange}value={ClassForm? ClassForm.hour: ''}/>
