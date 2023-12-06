@@ -1,5 +1,5 @@
 .body{
-    overflow-x: none;
+    overflow: hidden;
 }
 .ImgSection{
     margin-top: 5%;
