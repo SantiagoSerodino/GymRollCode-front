@@ -28,37 +28,39 @@
 .colorFormReg {
     background-color: #000000;
     border-radius: 20px;
-    overflow-y: hidden;
 }
 .tituloRegister{
     font-size: 3rem;
     color: #00F0A0;
     text-shadow: black 0 0 2px 4px;
 }
+.botonRegistrer{
+    color: #00F0A0;
+}
 
 .gradientRegister {
-    margin: 0;
-    height: auto;
+
+    width: auto;
+    height: 100vh;
 	background: linear-gradient(334deg, #01F8B4, #000000, #f7137e);
 	background-size: 180% 180%;
 	animation: gradient-animation 6s ease infinite;
     color: var(--color-1-más-oscuro);
-    
 }
-.botonRegistrer{
-    color: #00F0A0;
-}
-@media only screen and (min-width: 1200px) {
+    @media  screen and (max-width: 800px) {
     .gradientRegister {
-        height: 100vh;
+        height: 100vh ;
     }
 }
-@media only screen and (max-width: 800px) {
+@media  screen and (min-width: 801px) {
+
     .gradientRegister {
-        height: 100lvh;
+        height: 100% ;
     }
 }
+@media  screen and (min-width: 1900px) and (max-width: 5500px) {
 
-
-
-
+    .gradientRegister {
+        height: 100vh ;
+    }
+}
