@@ -4,6 +4,7 @@ import axios from 'axios';
 import SubmitButton from '../../generals/SubmitButton/SubmitButton';
 import InputForm from '../../generals/InputForm/InputForm';
 import '../Register/StyleRegisterForm.css'
+import logoLogin from '../../../assets/logoPagina3.png';
 
 const RegisterForm = () => {
   const navigate= useNavigate();
@@ -65,9 +66,8 @@ const RegisterForm = () => {
   };
 
   return (
-    
-    <div className='container-fluid gradientRegister  pb-5'>
-      <img src="../src/assets/logoPagina3.png" className='logoSize w-25 py-3' alt="" />
+    <div className='container-fluid gradientRegister pb-5'>
+      <img src={logoLogin} className='logoSize w-25 py-3' alt="" />
       <h1 className='tituloRegister'>Registro</h1>
       <div className='row justify-content-center py-4'>
         <form className='form col-md-6 col-12 p-4 colorFormReg' onSubmit={handleSubmit}>
