@@ -172,7 +172,7 @@ const AdminTeachersPage = () => {
                     <input className='form-control' type='password' name='password' id='password' onChange={handleChange} value={teachersForm?teachersForm.password : '' }/>
                     <br/>
                     <label htmlFor="date">Nombre:</label>
-                    <input className='form-control' type='text' name='name' id='name' readOnly={modalType=='actualizar'} onChange={handleChange} value={teachersForm?teachersForm.name : '' }/>
+                    <input className='form-control' type='text' name='name' id='name' onChange={handleChange} value={teachersForm?teachersForm.name : '' }/>
                     <br/>
                     <label htmlFor="hour">Apellido:</label>
                     <input className='form-control' type='text' name='lastName' id='lastName' onChange={handleChange}value={teachersForm? teachersForm.lastName: ''}/>

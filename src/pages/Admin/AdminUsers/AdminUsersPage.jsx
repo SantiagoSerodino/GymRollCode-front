@@ -158,9 +158,9 @@ const AdminUsersPage = ({user}) => {
                     <label htmlFor="email">Correo Electronico</label>
                     <input className='form-control' type='text' name='email' id='email' readOnly value={userForm.email}/>
                     <label htmlFor="name">Nombre</label>
-                    <input className='form-control' type='text' name='name' id='name' readOnly onChange={handleChange} value={userForm.name}/>
+                    <input className='form-control' type='text' name='name' id='name'  onChange={handleChange} value={userForm.name}/>
                     <label htmlFor="lastName">Apellido</label>
-                    <input className='form-control' type='text' name='lastName' id='lastName' readOnly onChange={handleChange} value={userForm.lastName}/>
+                    <input className='form-control' type='text' name='lastName' id='lastName' onChange={handleChange} value={userForm.lastName}/>
                     <label htmlFor="phoneNumber">Numero de Telefono</label>
                     <input className='form-control' type='number' name='phoneNumber' id='phoneNumber' onChange={handleChange} value={userForm.phoneNumber}/>
                     <label htmlFor="contractedPlan">Plan Contratado</label>
