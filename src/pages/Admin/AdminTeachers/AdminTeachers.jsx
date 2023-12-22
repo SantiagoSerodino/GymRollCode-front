@@ -4,19 +4,20 @@ import ColumnComponent from '../../../Components/generals/Table/ColumnComponent'
 import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const AdminClassesPage = () => {
+const AdminTeachersPage = () => {
     //Direccion url de la Api
     const apiUrl = import.meta.env.VITE_BACKEND_URL;
-
     //Seccion donde declaramos nuestros estados
-    const [classesList,setClassesList] = useState ([]);
-    const [addClassModal,setAddClassModal] = useState (false);
+    const [teachersList,setTeachersList] = useState ([]);
+    const [addTeacherModal,setAddTeacherModal] = useState (false);
     const [updateFlag, setUpdateFlag] = useState(false);
-    const [ClassForm,setClassForm]= useState({
+    const [teachersForm,setTeachersForm]= useState({
         id: '',
-        name:'',
-        date:'',
-        hour:'',
+        user: '',
+        password: '',
+        name: '',
+        lastName: '',
+        idClasses: '',
     })
     const [modalType,setModalType] = useState('');
     const [modalDelete,setModalDelete] = useState(false);
@@ -28,10 +29,10 @@ const AdminClassesPage = () => {
         const petitionGet = async ()=> {
             try {
                 //realiza la peticion GET a la base de datos
-                const response = await axios.get(`${apiUrl}/classes/`);
+                const response = await axios.get(`${apiUrl}/teachers/`);
                 const data = response.data;
                 //Guarda la informacion de la api en nuestro estado
-                setClassesList(data);
+                setTeachersList(data);
                 
             } catch (error) {
                 //Linea para manejar errores
@@ -46,7 +47,7 @@ const AdminClassesPage = () => {
     const petitionPost = async () => {
         try {
             
-            await axios.post(`${apiUrl}/classes/register`,ClassForm)
+            await axios.post(`${apiUrl}/teachers/register`,teachersForm)
             .then(() =>{
                 //Si la peticion se hace correctamente ejecuta la función para cerrar el modal y cargar nuevamente la lista con las clases
                 toggleModal();
@@ -63,7 +64,7 @@ const AdminClassesPage = () => {
     //Función para hacer petición PATCH y editar una clase
     const petitionPatch = async () => {
         try{
-            await axios.patch(`${apiUrl}/classes/edit/${ClassForm._id}`,ClassForm)
+            await axios.patch(`${apiUrl}/teachers/edit/${teachersForm.id}`,teachersForm)
             .then(() =>{
                 toggleModal();
                 setUpdateFlag((prev) => !prev);
@@ -77,7 +78,7 @@ const AdminClassesPage = () => {
     //Funcion para hacer peticion DELETE y eliminar una clase
     const petitionDelete = async (id) => {
         try{
-            await axios.delete(`${apiUrl}/classes/${id}`)
+            await axios.delete(`${apiUrl}/teachers/delete/${id}`)
             .then(() => {
                 setModalDelete(false);
                 setUpdateFlag((prev) => !prev);
@@ -93,25 +94,28 @@ const AdminClassesPage = () => {
 
     //Función para abrir y cerrar el modal
     const toggleModal = () => {
-       setAddClassModal(!addClassModal)
+       setAddTeacherModal(!addTeacherModal)
     }
     //Función para cargar el formulario con datos ingresados
     const handleChange=(e)=>{
         e.persist();
-        setClassForm ({
-            ...ClassForm,
+        setTeachersForm ({
+            ...teachersForm,
             [e.target.name]: e.target.value
         })
+        console.log(teachersForm);
     }
     
     //Función para seleccionar una clase y editarla y guarda los datos actuales en cada input
-    const selectClass = (Class)=> {
+    const selectTeacher = (teacher)=> {
         setModalType('actualizar')
-        setClassForm({
-            id: Class._id,
-            name : Class.name,
-            date: Class.date,
-            hour: Class.hour
+        setTeachersForm({
+            id:teacher._id,
+            user : teacher.user,
+            password: teacher.password,
+            name: teacher.name,
+            lastName: teacher.lastName,
+            idClases: teacher.Clases
         })
     }
     
@@ -119,34 +123,32 @@ const AdminClassesPage = () => {
 
   return (
     <>
-        {/* Boton para agregar clases */}
+        {/* Boton para agregar Profesor */}
         <br/>
-        <button className="btn btn-success" onClick={()=>{setClassForm(null),setModalType('crear'),toggleModal()}}>Agregar Clase</button>
+        <button className="btn btn-success" onClick={()=>{setTeachersForm(null),setModalType('crear'),toggleModal()}}>Agregar Clase</button>
         <br/><br/>
-        {/* Tabla de clases */}
+        {/* Tabla de profesores */}
         <table className='table'>
             <thead>
                 <tr>
+                    <ColumnComponent item={"Usuario"}/>
                     <ColumnComponent item={"Nombre"}/>
-                    <ColumnComponent item={"Fecha"}/>
-                    <ColumnComponent item={"Hora"}/>
-                    <ColumnComponent item={"Profesor"}/>
-                    <ColumnComponent item={"Usuarios"}/>
+                    <ColumnComponent item={"Apellido"}/>
+                    <ColumnComponent item={"Clase"}/>
                     <ColumnComponent item={"Acciones"}/>
                 </tr>
             </thead>
             <tbody>
-                {classesList.map((Class) => {
+                {teachersList.map((teacher) => {
                     return(
-                    <tr key={Class._id}>
-                        <td>{Class.name}</td>
-                        <td>{Class.date}</td>
-                        <td>{Class.hour}</td>
-                        <td>{`${Class.teacher?Class.teacher.name:[]} ${Class.teacher?Class.teacher.lastName:[]}`}</td>
-                        <td>{Class.users.map((users)=>{return(`${users.name} ${users.lastName},`)})}</td>
+                    <tr key={teacher._id}>
+                        <td>{teacher.user}</td>
+                        <td>{teacher.name}</td>
+                        <td>{teacher.lastName}</td>
+                        <td>{`${ teacher.classes? teacher.classes.map((classes)=>{return `  ${classes.name}: ${classes.date} (${classes.hour})`}) : [] } `}</td>
                         <td>
-                            <button className='btn btn-primary' onClick={()=>{selectClass(Class),toggleModal()}}><i className="bi bi-pencil-square"></i></button>
-                            <button className='btn btn-danger'onClick={()=>{selectClass(Class),setModalDelete(true)}}><i className="bi bi-trash3"></i></button>
+                            <button className='btn btn-primary' onClick={()=>{selectTeacher(teacher),toggleModal()}}><i className="bi bi-pencil-square"></i></button>
+                            <button className='btn btn-danger'onClick={()=>{selectTeacher(teacher),setModalDelete(true)}}><i className="bi bi-trash3"></i></button>
 
                         </td>
                     </tr>
@@ -155,47 +157,47 @@ const AdminClassesPage = () => {
             </tbody>
         </table>
         
-        {/* Modal para crear y editar una clase */}
-        <Modal isOpen={addClassModal} size='lg' centered >
+        {/* Modal para crear y editar un profesor */}
+        <Modal isOpen={addTeacherModal} size='lg' centered >
             <ModalHeader style={{display:'block'}}>
                 <span onClick={toggleModal} style={{float: 'right',cursor: "pointer"}}>x</span>
             </ModalHeader>
 
             <ModalBody>
                 <div className="form-group">
-                    <label htmlFor="name">Nombre:</label>
-                    <input className='form-control' type='text' name='name' id='name' readOnly={modalType=='actualizar'} onChange={handleChange} value={ClassForm?ClassForm.name : '' }/>
+                    <label htmlFor="name">Usuario:</label>
+                    <input className='form-control' type='text' name='user' id='user' onChange={handleChange} value={teachersForm? teachersForm.user : '' }/>
                     <br/>
-                    <label htmlFor="date">Fecha:</label>
-                    <select className='form-control' name='date' id='date' onChange={handleChange} value={ClassForm? ClassForm.date : ''}>
-                        <option value="Lunes">Lunes</option>
-                        <option value="Martes">Martes</option>
-                        <option value="Miercoles">Miercoles</option>
-                        <option value="Jueves">Jueves</option>
-                        <option value="Viernes">Viernes</option>
-                    </select>
+                    <label htmlFor="name">contraseña:</label>
+                    <input className='form-control' type='password' name='password' id='password' onChange={handleChange} value={teachersForm?teachersForm.password : '' }/>
                     <br/>
-                    <label htmlFor="hour">Hora:</label>
-                    <input className='form-control' type='text' name='hour' id='hour' onChange={handleChange}value={ClassForm? ClassForm.hour: ''}/>
+                    <label htmlFor="date">Nombre:</label>
+                    <input className='form-control' type='text' name='name' id='name' readOnly={modalType=='actualizar'} onChange={handleChange} value={teachersForm?teachersForm.name : '' }/>
+                    <br/>
+                    <label htmlFor="hour">Apellido:</label>
+                    <input className='form-control' type='text' name='lastName' id='lastName' onChange={handleChange}value={teachersForm? teachersForm.lastName: ''}/>
+                    <br/>
+                    <label htmlFor="hour">Clase:</label>
+                    <input className='form-control' type='text' name='classes' id='classes' onChange={handleChange}value={teachersForm? teachersForm.idClasses: ''}/>
                 </div>
             </ModalBody>
 
             <ModalFooter>
                 {modalType=='crear'?
                 <button className="btn btn-success" onClick={petitionPost}>Insertar</button> :
-                <button className="btn btn-primary" onClick={()=>{petitionPatch(ClassForm)}}>Editar</button>
+                <button className="btn btn-primary" onClick={()=>{petitionPatch(teachersForm)}}>Editar</button>
                 }
                 <button className="btn btn-danger" onClick={toggleModal}>Cancelar</button>
             </ModalFooter>
         </Modal>
 
-        {/* Modal para confirmacion de eliminar clase */}
+        {/* Modal para confirmacion de eliminar profesor */}
         <Modal isOpen={modalDelete} size='lg' centered>
             <ModalBody>
-                ¿Estas seguro que deseas eliminar esta clase? {ClassForm && ClassForm.name.toUpperCase()}
+                ¿Estas seguro que deseas eliminar este profesor?
             </ModalBody>
             <ModalFooter>
-                <button className="btn btn-danger" onClick={() => {petitionDelete(ClassForm.id)}}>Sí</button>
+                <button className="btn btn-danger" onClick={()=>{petitionDelete(teachersForm.id)}}>Sí</button>
                 <button className="btn btn-secondary" onClick={()=>{setModalDelete(false)}}>No</button>
             </ModalFooter>
         </Modal>
@@ -203,4 +205,4 @@ const AdminClassesPage = () => {
   )
 }
 
-export default AdminClassesPage;
+export default AdminTeachersPage;

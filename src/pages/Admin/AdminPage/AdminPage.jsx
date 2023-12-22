@@ -17,7 +17,7 @@ const AdminPage = () => {
           </div>
           <div className='col-12 col-md-12 col-lg-4'>
             <h2 className={styles.Titulo}>Administrar Profesores</h2>
-            <NavLink to="/error"><img src="https://media.istockphoto.com/id/675179390/es/foto/entrenador-muscular-en-portapapeles.jpg?s=612x612&w=0&k=20&c=eFDuNzHQJfNzOpZGxCPi8pM8bC18EeIm6lgVlmjPuhw=" alt="Clases" className={`${styles.CardImg}`} /></NavLink>
+            <NavLink to="teachers"><img src="https://media.istockphoto.com/id/675179390/es/foto/entrenador-muscular-en-portapapeles.jpg?s=612x612&w=0&k=20&c=eFDuNzHQJfNzOpZGxCPi8pM8bC18EeIm6lgVlmjPuhw=" alt="Clases" className={`${styles.CardImg}`} /></NavLink>
           </div>
         </div>
       </section>
