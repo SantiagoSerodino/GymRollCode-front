@@ -14,6 +14,7 @@ const AdminClassesPage = () => {
         date: '',
         hour: '',
         image: '',
+        _id: ''
     });
     const [modalType, setModalType] = useState('');
     const [modalDelete, setModalDelete] = useState(false);
@@ -25,7 +26,7 @@ const AdminClassesPage = () => {
                 const data = response.data;
                 setClassesList(data);
             } catch (error) {
-                console.log("No se pudo obtener la informacion de la API", error.message);
+                console.log("No se pudo obtener la información de la API", error.message);
             }
         }
 
@@ -46,7 +47,7 @@ const AdminClassesPage = () => {
 
     const petitionPatch = async () => {
         try {
-            await axios.patch(`${Url}edit`, ClassForm)
+            await axios.patch(`${Url}edit/${ClassForm._id}`, ClassForm)
                 .then((response) => {
                     setUpdateFlag((prev) => !prev);
                     toggleModal();
@@ -58,7 +59,7 @@ const AdminClassesPage = () => {
 
     const petitionDelete = async () => {
         try {
-            await axios.delete(Url, { data: { name: ClassForm.name } })
+            await axios.delete(`${Url}${ClassForm._id}`)
                 .then((response) => {
                     setModalDelete(false);
                     setUpdateFlag((prev) => !prev);
@@ -86,14 +87,15 @@ const AdminClassesPage = () => {
             name: Class.name,
             date: Class.date,
             hour: Class.hour,
-            image: Class.image
+            image: Class.image,
+            _id: Class._id
         })
     }
 
     return (
         <>
             <br />
-            <button className="btn btn-success" onClick={() => { setClassForm({ name: '', date: '', hour: '', image: '' }), setModalType('crear'), toggleModal() }}>Agregar Clase</button>
+            <button className="btn btn-success" onClick={() => { setClassForm({ name: '', date: '', hour: '', image: '', _id: '' }), setModalType('crear'), toggleModal() }}>Agregar Clase</button>
             <br /><br />
 
             <table className='table'>
@@ -102,8 +104,8 @@ const AdminClassesPage = () => {
                         <ColumnComponent item={"Nombre"} />
                         <ColumnComponent item={"Fecha"} />
                         <ColumnComponent item={"Hora"} />
-                        <ColumnComponent item={"Profesor"} />
-                        <ColumnComponent item={"Usuarios"} />
+                        <ColumnComponent item={"Imagen"} />
+                        <ColumnComponent item={"Instructor"} />
                         <ColumnComponent item={"Acciones"} />
                     </tr>
                 </thead>
@@ -177,4 +179,3 @@ const AdminClassesPage = () => {
 }
 
 export default AdminClassesPage;
-
