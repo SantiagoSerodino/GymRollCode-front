@@ -15,9 +15,11 @@ import PlanFull from './Components/generals/PlanCard/Planes/PlanFull';
 import { useEffect, useState } from 'react';
 
 function App() {
+
+  //Declaramos cambio de estado para user que se usara como props para usarlos en ciertos componentes
   const [user,setUser] = useState();
     const admin = user?.logedUser?.userWhitoutPassword?.admin;
-
+  //Accedemos al localStorage y seteamos user
   useEffect (()=>{
     setUser(JSON.parse(localStorage.getItem('user')))
   },[])
@@ -34,7 +36,7 @@ function App() {
           <Route path='/error' element={<ErrorScreen/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contactanos' element={<ContactUs/>} />
-          <Route path='/admin/*' element={admin? <AdminRouter user={user}/> : <Navigate to="/error" replace />}/>
+          <Route path='/admin/*' element={admin? <AdminRouter user={user}/> : (admin==false && <Navigate to="/error" replace />)}/>
           <Route path='/musculacion' element={<PlanMusculacion/>} />
           <Route path='/clases' element={<PlanClases/>} />
           <Route path='/full' element={<PlanFull/>} />

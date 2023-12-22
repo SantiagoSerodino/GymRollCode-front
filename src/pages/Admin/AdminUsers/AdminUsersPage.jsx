@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const AdminUsersPage = ({user}) => {
     //Direccion url de la Api
-    const Url="https://gym-roll.onrender.com/user/";
+    const apiUrl = import.meta.env.VITE_BACKEND_URL;
     //Instanciamos nuestro token del localStorage
     const token = user?.logedUser?.token;
     //Seccion donde declaramos los estados
@@ -34,7 +34,7 @@ const AdminUsersPage = ({user}) => {
         const petitionGet = async ()=> {
             try {
                 //realiza la peticion GET a la base de datos
-                const response = await axios.get(Url,
+                const response = await axios.get(`${apiUrl}/user/`,
                     {headers:{
                         Authorization: `Bearer ${token}`
                     }})
@@ -46,6 +46,7 @@ const AdminUsersPage = ({user}) => {
                 //Linea para manejar errores
                 console.log("No se pudo obtener la informacion de la API",error.message);
             }
+            
         }
         
         petitionGet();
@@ -54,7 +55,7 @@ const AdminUsersPage = ({user}) => {
     //Funcion para hacer petición PATCH y crear una clase
     const petitionPatch= async ()=> {
         try {
-            await axios.patch(Url,userForm)
+            await axios.patch(`${apiUrl}/user/${userForm._id}`,userForm)
             .then((response) => {
                 //Si la peticion se hace correctamente ejecuta la función para cerrar el modal y cargar nuevamente la lista con los usuarios actualizada
                 toggleModal();
@@ -70,7 +71,7 @@ const AdminUsersPage = ({user}) => {
     //Funcion para hacer petición DELETE y eliminar un usuario
     const petitionDelete = async () => {
         try {
-            await axios.delete (Url,{ data: { _id: userForm._id } })
+            await axios.delete (`${apiUrl}/user/${userForm._id}`)
             .then((response) => {
                 setModalDelete(false);
                 setUpdateFlag((prev) => !prev);
