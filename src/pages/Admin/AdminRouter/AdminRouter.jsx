@@ -4,6 +4,7 @@ import AdminClassesPage from '../AdminClasses/AdminClassesPage';
 import AdminUsersPage from '../AdminUsers/AdminUsersPage';
 import AdminPage from '../AdminPage/AdminPage';
 import styles from '../AdminPage/AdminPage.module.css';
+import AdminTeachersPage from '../AdminTeachers/AdminTeachers';
 
 const AdminRouter = ({user}) => {
   return (
@@ -12,6 +13,7 @@ const AdminRouter = ({user}) => {
       <Routes>
           <Route path='/users' element={<AdminUsersPage user={user}/>}/>
           <Route path='/clases' element={<AdminClassesPage/>}/>
+          <Route path='/teachers' element={<AdminTeachersPage/>}/>
           <Route path='/' element={<AdminPage/>}/>
       </Routes>
     </>

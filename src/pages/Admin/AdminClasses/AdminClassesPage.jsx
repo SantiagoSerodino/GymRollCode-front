@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import ColumnComponent from '../../../Components/generals/Table/ColumnComponent';
 import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const AdminClassesPage = () => {
-    const Url = "https://gym-roll.onrender.com/classes/";
-    const [classesList, setClassesList] = useState([]);
-    const [addClassModal, setAddClassModal] = useState(false);
+    //Direccion url de la Api
+    const apiUrl = import.meta.env.VITE_BACKEND_URL;
+
+    //Seccion donde declaramos nuestros estados
+    const [classesList,setClassesList] = useState ([]);
+    const [addClassModal,setAddClassModal] = useState (false);
     const [updateFlag, setUpdateFlag] = useState(false);
     const [ClassForm, setClassForm] = useState({
+        id: '',
         name: '',
         date: '',
         hour: '',
         image: '',
-        _id: ''
     });
     const [modalType, setModalType] = useState('');
     const [modalDelete, setModalDelete] = useState(false);
@@ -22,7 +25,8 @@ const AdminClassesPage = () => {
     useEffect(() => {
         const petitionGet = async () => {
             try {
-                const response = await axios.get(Url);
+                //realiza la peticion GET a la base de datos
+                const response = await axios.get(`${apiUrl}/classes/`);
                 const data = response.data;
                 setClassesList(data);
             } catch (error) {
@@ -35,37 +39,42 @@ const AdminClassesPage = () => {
 
     const petitionPost = async () => {
         try {
-            await axios.post(`${Url}/register`, ClassForm)
-                .then(response => {
-                    setUpdateFlag((prev) => !prev);
-                    toggleModal();
-                })
+            
+            await axios.post(`${apiUrl}/classes/register`,ClassForm)
+            .then(() =>{
+                //Si la peticion se hace correctamente ejecuta la función para cerrar el modal y cargar nuevamente la lista con las clases
+                toggleModal();
+                // Actualiza el flag para que el useEffect se ejecute
+                setUpdateFlag((prev) => !prev); 
+            })
+            
         } catch (error) {
             console.log("No se pudo crear la clase", error.message);
         }
     }
 
     const petitionPatch = async () => {
-        try {
-            await axios.patch(`${Url}edit/${ClassForm._id}`, ClassForm)
-                .then((response) => {
-                    setUpdateFlag((prev) => !prev);
-                    toggleModal();
-                })
+        try{
+            await axios.patch(`${apiUrl}/classes/edit/${ClassForm._id}`,ClassForm)
+            .then(() =>{
+                toggleModal();
+                setUpdateFlag((prev) => !prev);
+            })
         } catch (error) {
             console.log("No se pudo editar la clase", error.message);
         }
     }
 
-    const petitionDelete = async () => {
-        try {
-            await axios.delete(`${Url}${ClassForm._id}`)
-                .then((response) => {
-                    setModalDelete(false);
-                    setUpdateFlag((prev) => !prev);
-                })
-        } catch (error) {
-            console.log("No se pudo eliminar la clase", error.message);
+    //Funcion para hacer peticion DELETE y eliminar una clase
+    const petitionDelete = async (id) => {
+        try{
+            await axios.delete(`${apiUrl}/classes/${id}`)
+            .then(() => {
+                setModalDelete(false);
+                setUpdateFlag((prev) => !prev);
+            })
+        }catch(error){
+            console.log("No se pudo eliminar la clase",error.message);
         }
     }
 
@@ -84,18 +93,18 @@ const AdminClassesPage = () => {
     const selectClass = (Class) => {
         setModalType('actualizar')
         setClassForm({
+            id: Class._id,
             name: Class.name,
             date: Class.date,
             hour: Class.hour,
             image: Class.image,
-            _id: Class._id
         })
     }
 
     return (
         <>
             <br />
-            <button className="btn btn-success" onClick={() => { setClassForm({ name: '', date: '', hour: '', image: '', _id: '' }), setModalType('crear'), toggleModal() }}>Agregar Clase</button>
+            <button className="btn btn-success" onClick={() => { setClassForm({ name: '', date: '', hour: '', image: '', id: '' }), setModalType('crear'), toggleModal() }}>Agregar Clase</button>
             <br /><br />
 
             <table className='table'>
@@ -165,17 +174,18 @@ const AdminClassesPage = () => {
                 </ModalFooter>
             </Modal>
 
-            <Modal isOpen={modalDelete} size='lg' centered>
-                <ModalBody>
-                    ¿Estás seguro que deseas eliminar esta clase? {ClassForm && ClassForm.name.toUpperCase()}
-                </ModalBody>
-                <ModalFooter>
-                    <button className="btn btn-danger" onClick={petitionDelete}>Sí</button>
-                    <button className="btn btn-secondary" onClick={() => { setModalDelete(false) }}>No</button>
-                </ModalFooter>
-            </Modal>
-        </>
-    )
+        {/* Modal para confirmacion de eliminar clase */}
+        <Modal isOpen={modalDelete} size='lg' centered>
+            <ModalBody>
+                ¿Estas seguro que deseas eliminar esta clase? {ClassForm && ClassForm.name.toUpperCase()}
+            </ModalBody>
+            <ModalFooter>
+                <button className="btn btn-danger" onClick={() => {petitionDelete(ClassForm.id)}}>Sí</button>
+                <button className="btn btn-secondary" onClick={()=>{setModalDelete(false)}}>No</button>
+            </ModalFooter>
+        </Modal>
+    </>
+  )
 }
 
 export default AdminClassesPage;
