@@ -5,8 +5,10 @@ import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const AdminClassesPage = () => {
+     // Definición de la URL de la API
     const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
+     // Estados para manejar la lista de clases, el modal de agregar clase, el indicador de actualización, el formulario de clase, el tipo de modal y el modal de eliminación
     const [classesList, setClassesList] = useState([]);
     const [addClassModal, setAddClassModal] = useState(false);
     const [updateFlag, setUpdateFlag] = useState(false);
@@ -20,6 +22,7 @@ const AdminClassesPage = () => {
     const [modalType, setModalType] = useState('');
     const [modalDelete, setModalDelete] = useState(false);
 
+    // Efecto para obtener la lista de clases al montar el componente o cuando se actualiza el indicador de actualización
     useEffect(() => {
         const petitionGet = async () => {
             try {
@@ -34,6 +37,7 @@ const AdminClassesPage = () => {
         petitionGet();
     }, [updateFlag, apiUrl]);
 
+    // Función para enviar una petición POST y agregar una nueva clase
     const petitionPost = async () => {
         try {
             const formattedDate = { date: ClassForm.date };
@@ -50,6 +54,7 @@ const AdminClassesPage = () => {
         }
     }
 
+    // Función para enviar una petición PATCH y editar una clase existente
     const petitionPatch = async () => {
         try {
             await axios.patch(`${apiUrl}/classes/edit/${ClassForm._id}`, ClassForm)
@@ -62,6 +67,7 @@ const AdminClassesPage = () => {
         }
     }
 
+    // Función para enviar una petición DELETE y eliminar una clase
     const petitionDelete = async () => {
         try {
             await axios.delete(`${apiUrl}/classes/${ClassForm._id}`)
@@ -74,10 +80,12 @@ const AdminClassesPage = () => {
         }
     }
 
+     // Función para alternar la visibilidad del modal de agregar clase
     const toggleModal = () => {
         setAddClassModal(!addClassModal);
     }
 
+    // Función para manejar cambios en el formulario de clase
     const handleChange = (e) => {
         e.persist();
         setClassForm({
@@ -86,6 +94,7 @@ const AdminClassesPage = () => {
         })
     }
 
+    // Función para seleccionar una clase y configurar el formulario para su edición
     const selectClass = (Class) => {
         setModalType('actualizar')
         setClassForm({
